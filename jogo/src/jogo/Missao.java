@@ -1,4 +1,4 @@
-package src.jogo;
+package jogo.src.jogo;
 
 public class Missao {
     private String titulo;
