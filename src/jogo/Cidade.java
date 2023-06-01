@@ -3,10 +3,12 @@ package src.jogo;
 public class Cidade {
     private String nome;
     private Missao missao;
+    private int alterarJoia;
 
-    public Cidade(String nome, Missao missao) {
+    public Cidade(String nome, Missao missao, int alterarJoia) {
         this.missao = missao;
         this.nome = nome;
+        this.alterarJoia = alterarJoia;
     }
 
     public String getNome() {
@@ -23,6 +25,14 @@ public class Cidade {
 
     public void setMissao(Missao missao) {
         this.missao = missao;
+    }
+
+    public int getAlterarJoia() {
+        return alterarJoia;
+    }
+
+    public void setAlterarJoia(int alterarJoia) {
+        this.alterarJoia = alterarJoia;
     }
 
 }
