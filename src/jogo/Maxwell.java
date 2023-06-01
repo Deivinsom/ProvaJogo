@@ -3,12 +3,12 @@ package src.jogo;
 public class Maxwell {
     private int moedas;
     private int limitador;
-    private int joia;
+    private int joiaPoder;
 
-    public Maxwell(int moedas, int limitador, int joia) {
+    public Maxwell(int moedas, int limitador, int joiaPoder) {
         this.moedas = moedas;
         this.limitador = limitador;
-        this.joia = joia;
+        this.joiaPoder = joiaPoder;
     }
 
     public int getMoedas() {
@@ -27,11 +27,11 @@ public class Maxwell {
         this.limitador = limitador;
     }
 
-    public int getJoia() {
-        return joia;
+    public int getJoiaPoder() {
+        return joiaPoder;
     }
 
-    public void setJoia(int joia) {
-        this.joia = joia;
+    public void setJoiaPoder(int joiaPoder) {
+        this.joiaPoder = joiaPoder;
     }
 }

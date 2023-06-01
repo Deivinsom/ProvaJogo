@@ -5,14 +5,14 @@ public class Missao {
     private String text;
     private int recomAceitar;
     private int recomCompletar;
-    private Missao next;
+    private int alterarJoia;
 
-    public Missao(String titulo, String text, int recomAceitar, int recomCompletar) {
+    public Missao(String titulo, String text, int recomAceitar, int recomCompletar, int alterarJoia) {
         this.text = text;
         this.titulo = titulo;
         this.recomAceitar = recomAceitar;
         this.recomCompletar = recomCompletar;
-        this.next = null;
+        this.alterarJoia = alterarJoia;
     }
 
     public String getTitulo() {
@@ -31,14 +31,6 @@ public class Missao {
         this.text = text;
     }
 
-    public Missao getNext() {
-        return next;
-    }
-
-    public void setNext(Missao next) {
-        this.next = next;
-    }
-
     public int getRecomAceitar() {
         return recomAceitar;
     }
@@ -53,6 +45,14 @@ public class Missao {
 
     public void setRecomCompletar(int recomCompletar) {
         this.recomCompletar = recomCompletar;
+    }
+
+    public int getAlterarJoia() {
+        return alterarJoia;
+    }
+
+    public void setAlterarJoia(int alterarJoia) {
+        this.alterarJoia = alterarJoia;
     }
 
 }

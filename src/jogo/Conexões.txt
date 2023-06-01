@@ -1,0 +1,37 @@
+Unbud - Kingdom of Legmod
+Unbud - Principality of Nekikh
+
+Kingdom of Legmod - Principality of Nekikh
+Kingdom of Legmod - Kingdom of Oldcalia
+Kingdom of Legmod-Kingdom - Protectorate of Dogrove
+Kingdom of Legmod-Kingdom - Principality of Gritesthr
+
+Principality of Dogrove - Principality of Gritesthr
+Principality of Dogrove - Kingdom of Lastwatch
+Principality of Dogrove - Kingdom of Oldcalia
+
+Principality of Gritesthr - Principality of Nekikh
+
+Kingdom of Lastwatch - Principality of Gritesthr
+Kingdom of Lastwatch - Grand Duchy of Smalia
+
+Kingdom of Oldcalia - Grand Duchy of Smalia
+Kingdom of Oldcalia - Defalsia
+Kingdom of Oldcalia - Kingdom of Kalb
+Kingdom of Oldcalia - Aymar League
+
+Aymar League - Kingdom of Kalb
+Aymar League - Defalsia
+Aymar League - Principality of Karhora
+Aymar League - Vunese Empire
+Aymar League - Bun
+Aymar League - Nargumun
+Aymar League - Chandir Sultanate
+
+Nargumun - Bun
+Nargumun - Principality of Karhora
+
+Vunese Empire - Kingdom of Kalb
+Vunese Empire - Chandir Sultanate
+
+Chandir Sultanate - Principality of Kasya
