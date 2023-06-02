@@ -2,43 +2,45 @@ package src.jogo;
 
 public class ConstruirCidades {
 
+//Construindo as cidades do mapa
+
     public static Cidade unbud() {
-        Cidade unbud = new Cidade(null, null, 0);
+        Cidade unbud = new Cidade("Unbud", null, 0);
         return unbud;
     }
 
     public static Cidade kingdomOfLemod() {
-        Cidade kingdoOfLemod = new Cidade(null, null, 2);
+        Cidade kingdoOfLemod = new Cidade("Kingdom Of Lemod", null, 2);
         return kingdoOfLemod;
     }
 
     public static Cidade principalityOfNekikh() {
-        Cidade principalityOfNekikh = new Cidade(null, null, 1);
+        Cidade principalityOfNekikh = new Cidade("Principality Of Nekikh", null, 1);
         return principalityOfNekikh;
     }
 
     public static Cidade kingdomOfOldcalia() {
-        Cidade kingdomOfOldcalia = new Cidade(null, null, 4);
+        Cidade kingdomOfOldcalia = new Cidade("Kingdom Of Oldcalia", null, 4);
         return kingdomOfOldcalia;
     }
 
     public static Cidade protectorateOfDogrove() {
-        Cidade protectorateOfDogrove = new Cidade(null, null, 3);
+        Cidade protectorateOfDogrove = new Cidade("Protectorate Of Dogrove", null, 3);
         return protectorateOfDogrove;
     }
 
     public static Cidade principalityOfGritesthr() {
-        Cidade principalityOfGritesthr = new Cidade(null, null, 5);
+        Cidade principalityOfGritesthr = new Cidade("Principality Of Gritesthr", null, 5);
         return principalityOfGritesthr;
     }
 
     public static Cidade kingdomOfLastwatch() {
-        Cidade kingdomOfLastwatch = new Cidade(null, null, -2);
+        Cidade kingdomOfLastwatch = new Cidade("Kingdom Of Lastwatch", null, -2);
         return kingdomOfLastwatch;
     }
 
     public static Cidade grandDuchyOfSmalia() {
-        Cidade grandDuchyOfSmalia = new Cidade(null, null, 1);
+        Cidade grandDuchyOfSmalia = new Cidade("Grand Duchy Of Smalia", null, 1);
         return grandDuchyOfSmalia;
     }
 
@@ -59,37 +61,37 @@ public class ConstruirCidades {
     }
 
     public static Cidade aymarLeague() {
-        Cidade aymarLeague = new Cidade(null, null, 1);
+        Cidade aymarLeague = new Cidade("Aymar League", null, 1);
         return aymarLeague;
     }
 
     public static Cidade principalityOfKarhora() {
-        Cidade principalityOfKarhora = new Cidade(null, null, -2);
+        Cidade principalityOfKarhora = new Cidade("Principality Of Karhora", null, -2);
         return principalityOfKarhora;
     }
 
     public static Cidade vuneseEmpire() {
-        Cidade vuneseEmpire = new Cidade(null, null, 0);
+        Cidade vuneseEmpire = new Cidade("Vunese Empire", null, 0);
         return vuneseEmpire;
     }
 
     public static Cidade bun() {
-        Cidade bun = new Cidade(null, null, 5);
+        Cidade bun = new Cidade("Bun", null, 5);
         return bun;
     }
 
     public static Cidade nargumun() {
-        Cidade nargumun = new Cidade(null, null, 0);
+        Cidade nargumun = new Cidade("Nargumun", null, 0);
         return nargumun;
     }
 
     public static Cidade chandirSultanate() {
-        Cidade chandirSultanate = new Cidade(null, null, 1);
+        Cidade chandirSultanate = new Cidade("Chandir Sultanate", null, 1);
         return chandirSultanate;
     }
 
     public static Cidade principalityOfKasya() {
-        Cidade principalityOfKasya = new Cidade(null, null, -7);
+        Cidade principalityOfKasya = new Cidade("Principality Of Kasyanull", null, -7);
         return principalityOfKasya;
     }
 }
