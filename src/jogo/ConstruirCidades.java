@@ -1,4 +1,4 @@
-package jogo.src.jogo;
+package src.jogo;
 
 public class ConstruirCidades {
 

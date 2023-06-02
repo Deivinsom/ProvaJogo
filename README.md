@@ -1,2 +1,0 @@
-# ProvaJogo
-#Necessário biblioteca JgraphT
