@@ -44,7 +44,8 @@ public class Grafo {
 
     public void imprimirArestas(){
         for (int i=0; i<arestas.size();i++){
-            System.out.println(arestas.get(i).getPeso());
+            System.out.println(arestas.get(i).getOrigem().getCidade().getNome());
+            System.out.println(arestas.get(i).getDestino().getCidade().getNome());
         }
     }
 
