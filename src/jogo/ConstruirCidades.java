@@ -2,96 +2,114 @@ package src.jogo;
 
 public class ConstruirCidades {
 
-//Construindo as cidades do mapa
+    // Construindo as cidades do mapa
 
-    public static Cidade unbud() {
+    public static Vertice unbud() {
         Cidade unbud = new Cidade("Unbud", null, 0);
-        return unbud;
+        Vertice novo = new Vertice(unbud);
+        return novo;
     }
 
-    public static Cidade kingdomOfLemod() {
+    public static Vertice kingdomOfLemod() {
         Cidade kingdoOfLemod = new Cidade("Kingdom Of Lemod", null, 2);
-        return kingdoOfLemod;
+        Vertice novo = new Vertice(kingdoOfLemod);
+        return novo;
     }
 
-    public static Cidade principalityOfNekikh() {
+    public static Vertice principalityOfNekikh() {
         Cidade principalityOfNekikh = new Cidade("Principality Of Nekikh", null, 1);
-        return principalityOfNekikh;
+        Vertice novo = new Vertice(principalityOfNekikh);
+        return novo;
     }
 
-    public static Cidade kingdomOfOldcalia() {
+    public static Vertice kingdomOfOldcalia() {
         Cidade kingdomOfOldcalia = new Cidade("Kingdom Of Oldcalia", null, 4);
-        return kingdomOfOldcalia;
+        Vertice novo = new Vertice(kingdomOfOldcalia);
+        return novo;
     }
 
-    public static Cidade protectorateOfDogrove() {
+    public static Vertice protectorateOfDogrove() {
         Cidade protectorateOfDogrove = new Cidade("Protectorate Of Dogrove", null, 3);
-        return protectorateOfDogrove;
+        Vertice novo = new Vertice(protectorateOfDogrove);
+        return novo;
     }
 
-    public static Cidade principalityOfGritesthr() {
+    public static Vertice principalityOfGritesthr() {
         Cidade principalityOfGritesthr = new Cidade("Principality Of Gritesthr", null, 5);
-        return principalityOfGritesthr;
+        Vertice novo = new Vertice(principalityOfGritesthr);
+        return novo;
     }
 
-    public static Cidade kingdomOfLastwatch() {
+    public static Vertice kingdomOfLastwatch() {
         Cidade kingdomOfLastwatch = new Cidade("Kingdom Of Lastwatch", null, -2);
-        return kingdomOfLastwatch;
+        Vertice novo = new Vertice(kingdomOfLastwatch);
+        return novo;
     }
 
-    public static Cidade grandDuchyOfSmalia() {
+    public static Vertice grandDuchyOfSmalia() {
         Cidade grandDuchyOfSmalia = new Cidade("Grand Duchy Of Smalia", null, 1);
-        return grandDuchyOfSmalia;
+        Vertice novo = new Vertice(grandDuchyOfSmalia);
+        return novo;
     }
 
-    public static Cidade defalsia() {
+    public static Vertice defalsia() {
         Missao missao = new Missao("Botas do poder",
                 "Vá até a cidade de Principality of Kasya e receba as botas do poder",
                 6, 3, 1);
         Cidade defalsia = new Cidade("Defalsia", missao, -3);
-        return defalsia;
+        Vertice novo = new Vertice(defalsia);
+        return novo;
     }
 
-    public static Cidade kingdomOfKalb() {
+    public static Vertice kingdomOfKalb() {
         Missao missao = new Missao("Luvas do poder",
                 "Vá até a cidade de Grand Duchy of Smalia e receba as luvas do poder",
                 4, 2, 2);
         Cidade kindomofKalb = new Cidade("Kingdom of Kalb", missao, 2);
-        return kindomofKalb;
+        Vertice novo = new Vertice(kindomofKalb);
+        return novo;
     }
 
-    public static Cidade aymarLeague() {
+    public static Vertice aymarLeague() {
         Cidade aymarLeague = new Cidade("Aymar League", null, 1);
-        return aymarLeague;
+        Vertice novo = new Vertice(aymarLeague);
+        return novo;
     }
 
-    public static Cidade principalityOfKarhora() {
+    public static Vertice principalityOfKarhora() {
         Cidade principalityOfKarhora = new Cidade("Principality Of Karhora", null, -2);
-        return principalityOfKarhora;
+        Vertice novo = new Vertice(principalityOfKarhora);
+        return novo;
     }
 
-    public static Cidade vuneseEmpire() {
+    public static Vertice vuneseEmpire() {
         Cidade vuneseEmpire = new Cidade("Vunese Empire", null, 0);
-        return vuneseEmpire;
+        Vertice novo = new Vertice(vuneseEmpire);
+        return novo;
     }
 
-    public static Cidade bun() {
+    public static Vertice bun() {
         Cidade bun = new Cidade("Bun", null, 5);
-        return bun;
+        Vertice novo = new Vertice(bun);
+        return novo;
     }
 
-    public static Cidade nargumun() {
+    public static Vertice nargumun() {
         Cidade nargumun = new Cidade("Nargumun", null, 0);
-        return nargumun;
+        Vertice novo = new Vertice(nargumun);
+        return novo;
     }
 
-    public static Cidade chandirSultanate() {
+    public static Vertice chandirSultanate() {
         Cidade chandirSultanate = new Cidade("Chandir Sultanate", null, 1);
-        return chandirSultanate;
+        Vertice novo = new Vertice(chandirSultanate);
+        return novo;
+
     }
 
-    public static Cidade principalityOfKasya() {
+    public static Vertice principalityOfKasya() {
         Cidade principalityOfKasya = new Cidade("Principality Of Kasyanull", null, -7);
-        return principalityOfKasya;
+        Vertice novo = new Vertice(principalityOfKasya);
+        return novo;
     }
 }
