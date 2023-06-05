@@ -27,8 +27,9 @@ public class MapaGrafo {
         grafo.addAresta(0, ConstruirCidades.unbud(), ConstruirCidades.kingdomOfLemod());
         grafo.addAresta(0, ConstruirCidades.unbud(), ConstruirCidades.principalityOfNekikh());
         grafo.addAresta(1, ConstruirCidades.kingdomOfLemod(), ConstruirCidades.unbud());
-        grafo.addAresta(2, ConstruirCidades.kingdomOfLemod(), ConstruirCidades.principalityOfNekikh());
-        grafo.addAresta(1, ConstruirCidades.principalityOfNekikh(), ConstruirCidades.unbud());
+        grafo.addAresta(1, ConstruirCidades.kingdomOfLemod(), ConstruirCidades.principalityOfNekikh());
+        grafo.addAresta(2, ConstruirCidades.principalityOfNekikh(), ConstruirCidades.unbud());
         grafo.addAresta(2, ConstruirCidades.principalityOfNekikh(), ConstruirCidades.kingdomOfLemod());
+
     }
 }

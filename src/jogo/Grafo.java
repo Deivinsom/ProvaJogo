@@ -36,16 +36,19 @@ public class Grafo {
         }
     }
 
-    public void imprimirVertices(){
-        for (Vertice vertice : vertices){
+    public void imprimirVertices() {
+        for (Vertice vertice : vertices) {
             System.out.println(vertice.getCidade().getNome());
         }
     }
 
-    public void imprimirArestas(){
-        for (int i=0; i<arestas.size();i++){
-            System.out.println(arestas.get(i).getOrigem().getCidade().getNome());
-            System.out.println(arestas.get(i).getDestino().getCidade().getNome());
+    public void imprimirArestas(Cidade cidade) {
+        for (int i = 0; i <= arestas.size(); i++) {
+            if (vertices.get(i).getCidade().equals(cidade)) {
+                System.out.println(arestas.get(i).getOrigem().getCidade().getNome() + " ----> "
+                        + arestas.get(i).getDestino().getCidade().getNome());
+                System.out.println();
+            }
         }
     }
 
