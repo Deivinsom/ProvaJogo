@@ -4,21 +4,21 @@ public class ConstruirCidades {
 
     // Construindo as cidades do mapa
 
-    public static Vertice unbud() {
-        Cidade unbud = new Cidade("Unbud", null, 0);
-        Vertice novo = new Vertice(unbud);
+    public static Vertice ubud() {
+        Cidade ubud = new Cidade("Ubud", null, 0);
+        Vertice novo = new Vertice(ubud);
         return novo;
     }
 
-    public static Vertice kingdomOfLemod() {
-        Cidade kingdoOfLemod = new Cidade("Kingdom Of Lemod", null, 2);
-        Vertice novo = new Vertice(kingdoOfLemod);
+    public static Vertice kingdomOfLegmod() {
+        Cidade kingdomOfLegmod = new Cidade("Kingdom Of Legmod", null, 2);
+        Vertice novo = new Vertice(kingdomOfLegmod);
         return novo;
     }
 
-    public static Vertice principalityOfNekikh() {
-        Cidade principalityOfNekikh = new Cidade("Principality Of Nekikh", null, 1);
-        Vertice novo = new Vertice(principalityOfNekikh);
+    public static Vertice principalityOfNekika() {
+        Cidade principalityOfNekika = new Cidade("Principality Of Nekika", null, 1);
+        Vertice novo = new Vertice(principalityOfNekika);
         return novo;
     }
 
@@ -34,9 +34,9 @@ public class ConstruirCidades {
         return novo;
     }
 
-    public static Vertice principalityOfGritesthr() {
-        Cidade principalityOfGritesthr = new Cidade("Principality Of Gritesthr", null, 5);
-        Vertice novo = new Vertice(principalityOfGritesthr);
+    public static Vertice principalityOfGritestar() {
+        Cidade principalityOfGritestar = new Cidade("Principality Of Gritestar", null, 5);
+        Vertice novo = new Vertice(principalityOfGritestar);
         return novo;
     }
 
@@ -65,7 +65,7 @@ public class ConstruirCidades {
         Missao missao = new Missao("Luvas do poder",
                 "Vá até a cidade de Grand Duchy of Smalia e receba as luvas do poder",
                 4, 2, 2);
-        Cidade kindomofKalb = new Cidade("Kingdom of Kalb", missao, 2);
+        Cidade kindomofKalb = new Cidade("Kingdom Of Kalb", missao, 2);
         Vertice novo = new Vertice(kindomofKalb);
         return novo;
     }
@@ -108,7 +108,7 @@ public class ConstruirCidades {
     }
 
     public static Vertice principalityOfKasya() {
-        Cidade principalityOfKasya = new Cidade("Principality Of Kasyanull", null, -7);
+        Cidade principalityOfKasya = new Cidade("Principality Of Kasya", null, -7);
         Vertice novo = new Vertice(principalityOfKasya);
         return novo;
     }
@@ -118,13 +118,13 @@ public class ConstruirCidades {
     public static ListaEncadeafaCidades addLista(){
         ListaEncadeafaCidades lista;
         lista = new ListaEncadeafaCidades(null, null);
-        lista.addNo(unbud().getCidade(),1);
-        lista.addNo(kingdomOfLemod().getCidade(),2);
-        lista.addNo(principalityOfNekikh().getCidade(),3);
+        lista.addNo(ubud().getCidade(),1);
+        lista.addNo(kingdomOfLegmod().getCidade(),2);
+        lista.addNo(principalityOfNekika().getCidade(),3);
         lista.addNo(kingdomOfKalb().getCidade(),4);
         lista.addNo(kingdomOfOldcalia().getCidade(),5);
         lista.addNo(kingdomOfLastwatch().getCidade(),6);
-        lista.addNo(principalityOfGritesthr().getCidade(),7);
+        lista.addNo(principalityOfGritestar().getCidade(),7);
         lista.addNo(principalityOfKasya().getCidade(),8);
         lista.addNo(principalityOfKarhora().getCidade(),9);
         lista.addNo(chandirSultanate().getCidade(),10);
