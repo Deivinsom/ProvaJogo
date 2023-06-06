@@ -20,7 +20,6 @@ public class MapaGrafo {
         grafo.addVertice(ConstruirCidades.chandirSultanate());
         grafo.addVertice(ConstruirCidades.principalityOfKarhora());
         grafo.addVertice(ConstruirCidades.principalityOfKasya());
-        
     }
 
     public static void addCaminhos() {
@@ -99,7 +98,6 @@ public class MapaGrafo {
         grafo.addAresta(15, ConstruirCidades.chandirSultanate(), ConstruirCidades.bun());
         grafo.addAresta(15, ConstruirCidades.chandirSultanate(), ConstruirCidades.principalityOfKasya());
 
-        grafo.addAresta(16, ConstruirCidades.principalityOfKasya(), ConstruirCidades.chandirSultanate());
-        
+        grafo.addAresta(16, ConstruirCidades.principalityOfKasya(), ConstruirCidades.chandirSultanate());       
     }
 }
