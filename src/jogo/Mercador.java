@@ -66,7 +66,7 @@ public class Mercador {
         respostas.destino = scanner.nextLine();
 
         System.out.println("\n~ Mercador ~\n 'Uma última pergunta grande cavalheiro, vóis não tem interesse em trocar algumas de suas \n" +
-                "moedas para aumentar o limiar de sua poderosa jóia em sua posse?' (S/N)");
+                "moedas para aumentar o limiar da poderosa jóia em sua posse?' (S/N)");
         respostas.decisao = scanner.nextLine();
 
         return respostas;
