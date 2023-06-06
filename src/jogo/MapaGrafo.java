@@ -21,7 +21,7 @@ public class MapaGrafo {
         grafo.addVertice(ConstruirCidades.principalityOfKarhora());
         grafo.addVertice(ConstruirCidades.principalityOfKasya());
     }
-
+// Adicionando as Fronteiras
     public static void addCaminhos() {
         grafo.addAresta(0, ConstruirCidades.ubud(), ConstruirCidades.kingdomOfLegmod());
         grafo.addAresta(0, ConstruirCidades.ubud(), ConstruirCidades.principalityOfNekika());

@@ -112,29 +112,4 @@ public class ConstruirCidades {
         Vertice novo = new Vertice(principalityOfKasya);
         return novo;
     }
-
-    //Add ListaEncadeada
-
-    public static ListaEncadeafaCidades addLista(){
-        ListaEncadeafaCidades lista;
-        lista = new ListaEncadeafaCidades(null, null);
-        lista.addNo(ubud().getCidade(),1);
-        lista.addNo(kingdomOfLegmod().getCidade(),2);
-        lista.addNo(principalityOfNekika().getCidade(),3);
-        lista.addNo(kingdomOfKalb().getCidade(),4);
-        lista.addNo(kingdomOfOldcalia().getCidade(),5);
-        lista.addNo(kingdomOfLastwatch().getCidade(),6);
-        lista.addNo(principalityOfGritestar().getCidade(),7);
-        lista.addNo(principalityOfKasya().getCidade(),8);
-        lista.addNo(principalityOfKarhora().getCidade(),9);
-        lista.addNo(chandirSultanate().getCidade(),10);
-        lista.addNo(nargumun().getCidade(),11);
-        lista.addNo(bun().getCidade(),12);
-        lista.addNo(vuneseEmpire().getCidade(),13);
-        lista.addNo(aymarLeague().getCidade(),14);
-        lista.addNo(defalsia().getCidade(),15);
-        lista.addNo(grandDuchyOfSmalia().getCidade(),16);
-        lista.addNo(protectorateOfDogrove().getCidade(),17);
-        return lista;
-    }
 }
