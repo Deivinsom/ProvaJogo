@@ -54,7 +54,7 @@ public class Menu {
 
         //if(missao == true) {
         //    System.out.println("Aceitas?");
-        //    String resposta = scanner.nextLine();
+        //    String resposta = scanner.nextLaine();
         //}
 
         //System.out.println(this.cidade.possibilidades());
