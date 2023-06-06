@@ -11,6 +11,10 @@ public class Grafo {
         this.vertices = new ArrayList<>();
     }
 
+    public ArrayList<Aresta> getArestas() {
+        return arestas;
+    }
+
     public void addVertice(Vertice vertice) {
         vertices.add(vertice);
     }
@@ -43,8 +47,8 @@ public class Grafo {
 
     public ArrayList<Vertice> imprimirArestas(int peso) {
         ArrayList<Vertice> cidadesVizinhas = new ArrayList<>();
-        for(Aresta aresta:arestas){
-            if(peso == aresta.getPeso()){
+        for (Aresta aresta : arestas) {
+            if (peso == aresta.getPeso()) {
                 cidadesVizinhas.add(aresta.getDestino());
             }
         }
