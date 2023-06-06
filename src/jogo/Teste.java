@@ -2,8 +2,8 @@
 
 public class Teste {
     public static void main(String[] args) {
-        Mercador mer = new Mercador();
-
-        mer.perguntasMercador();
+        MapaGrafo.addCidades();
+        MapaGrafo.addCaminhos();
+        System.out.println(MapaGrafo.grafo.imprimirArestas(0));
     }
 }

@@ -11,6 +11,10 @@ public class Grafo {
         this.vertices = new ArrayList<>();
     }
 
+    public ArrayList<Aresta> getArestas() {
+        return arestas;
+    }
+
     public void addVertice(Vertice vertice) {
         vertices.add(vertice);
     }
@@ -27,9 +31,8 @@ public class Grafo {
             System.out.println("Conexões do Vértice " + vertice.getCidade().getNome() + ":");
             for (Aresta aresta : vertice.getArestas()) {
                 Vertice destino = aresta.getDestino();
-                int peso = aresta.getPeso();
+                System.out.println(destino.getCidade().getNome());
                 System.out.println();
-                System.out.println(destino.getCidade().getNome() + "(" + peso + ")");
                 System.out.println();
             }
             System.out.println();
@@ -42,14 +45,14 @@ public class Grafo {
         }
     }
 
-    public void imprimirArestas(Cidade cidade) {
-        for (int i = 0; i <= arestas.size(); i++) {
-            if (vertices.get(i).getCidade().equals(cidade)) {
-                System.out.println(arestas.get(i).getOrigem().getCidade().getNome() + " ----> "
-                        + arestas.get(i).getDestino().getCidade().getNome());
-                System.out.println();
+    public ArrayList<Vertice> imprimirArestas(int peso) {
+        ArrayList<Vertice> cidadesVizinhas = new ArrayList<>();
+        for (Aresta aresta : arestas) {
+            if (peso == aresta.getPeso()) {
+                cidadesVizinhas.add(aresta.getDestino());
             }
         }
+        return cidadesVizinhas;
     }
 
 }
