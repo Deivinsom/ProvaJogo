@@ -6,7 +6,7 @@ public class Menu {
     Scanner scanner = new Scanner(System.in);
 
     public void dialogoInicial() {
-        System.out.println("\nMaxwell, The Game");
+        System.out.println("\nDEATH STRANDING 3");
         System.out.println("Pressione <ENTER> para começar...");
         scanner.nextLine();
 
