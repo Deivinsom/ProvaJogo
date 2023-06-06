@@ -2,8 +2,8 @@
 
 public class Teste {
     public static void main(String[] args) {
-        ConstruirCidades.addLista();
-        ListaEncadeafaCidades lista = ConstruirCidades.addLista();;
-        System.out.println(lista.pesquisarCidade(1));
+        Mercador mer = new Mercador();
+
+        mer.perguntasMercador();
     }
 }
