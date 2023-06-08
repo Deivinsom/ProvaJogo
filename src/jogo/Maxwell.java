@@ -1,43 +1,38 @@
 package src.jogo;
 
 public class Maxwell {
-    private static int moedas;
-    private static int limitador;
-    private static int rota;
+    private int moedas;
+    private int limitador;
+    private int rota;
 
     public Maxwell() {
-        Maxwell.moedas = 3;
-        Maxwell.limitador = 7;
-        Maxwell.rota = 0;
+        this.moedas = 3;
+        this.limitador = 7;
+        this.rota = 0;
     }
 
-    public static int getMoedas() {
+    public int getMoedas() {
         return moedas;
     }
 
     public void setMoedas(int moedas) {
-        Maxwell.moedas = moedas;
+        this.moedas = moedas;
     }
 
-    public static int getLimitador() {
+    public int getLimitador() {
         return limitador;
     }
 
     public void setLimitador(int limitador) {
-        Maxwell.limitador = limitador;
+        this.limitador = limitador;
     }
 
-    public static int getRota() {
+    public int getRota() {
         return rota;
     }
 
     public void setRota(int rota) {
-        Maxwell.rota = rota;
-    }
-
-    public static Maxwell iniciarMax() {
-        Maxwell max = new Maxwell();
-        return max;
+        this.rota = rota;
     }
 
 }

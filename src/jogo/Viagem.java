@@ -8,7 +8,9 @@ public class Viagem {
         Scanner sc = new Scanner(System.in);
         MapaGrafo.addCaminhos();
         MapaGrafo.addCidades();
-        int peso = Maxwell.getRota();
+        Maxwell max = new Maxwell();
+        int peso = max.getRota();
+        boolean verificador = false;
         ArrayList<Integer> escolhas = new ArrayList<>();
         ArrayList<Vertice> destinos = MapaGrafo.grafo.imprimirDestinos(peso);
         System.out.println("Escolha o caminho:");
@@ -18,6 +20,15 @@ public class Viagem {
         }
         peso = sc.nextInt();
         
+        while (verificador == false) {
+            if (escolhas.contains(peso)) {
+                max.setRota(peso);
+                verificador = true;
+            } else {
+                System.out.println("Digite um local válido");
+                peso = sc.nextInt();
+            }
+        }
 
         sc.close();
     }
