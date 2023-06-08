@@ -3,8 +3,8 @@ package src.jogo;
 public class Joia {
     private int poderJoia;
 
-    public Joia(int poderJoia) {
-        this.poderJoia = poderJoia;
+    public Joia() {
+        this.poderJoia = 0;
     }
 
     public int getPoderJoia() {

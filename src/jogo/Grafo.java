@@ -45,7 +45,7 @@ public class Grafo {
         }
     }
 
-    public ArrayList<Vertice> imprimirArestas(int peso) {
+    public ArrayList<Vertice> imprimirDestinos(int peso) {
         ArrayList<Vertice> cidadesVizinhas = new ArrayList<>();
         for (Aresta aresta : arestas) {
             if (peso == aresta.getPeso()) {
