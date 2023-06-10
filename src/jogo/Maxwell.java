@@ -5,10 +5,10 @@ public class Maxwell {
     private int limitador;
     private int rota;
 
-    public Maxwell() {
-        this.moedas = 3;
-        this.limitador = 7;
-        this.rota = 0;
+    public Maxwell(int moedas, int limitador, int rota) {
+        this.moedas = moedas;
+        this.limitador = limitador;
+        this.rota = rota;
     }
 
     public int getMoedas() {
