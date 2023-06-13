@@ -27,13 +27,15 @@ public class Grafo {
     }
 
     public void imPrimirMapa() {
+        MapaGrafo.addCaminhos();
+        MapaGrafo.addCidades();
         for (Vertice vertice : vertices) {
-            System.out.println("Conexões do Vértice " + vertice.getCidade().getNome() + ":");
-            for (Aresta aresta : vertice.getArestas()) {
-                Vertice destino = aresta.getDestino();
-                System.out.println(destino.getCidade().getNome());
-                System.out.println();
-                System.out.println();
+            System.out.println("Conexões de " + vertice.getCidade().getNome() + ":");
+            for (Aresta aresta : arestas) {
+                if(vertice.getCidade().getValorRota() == aresta.getPeso()){
+                    System.out.println(aresta.getDestino().getCidade().getNome());
+
+                }
             }
             System.out.println();
         }
