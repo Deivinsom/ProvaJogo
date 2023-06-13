@@ -60,14 +60,14 @@ public class Mercador {
         respostas.moedas = scanner.nextInt();
 
         System.out.println("\n~ Mercador ~\n 'SHISHISHI! ... Deveras intrigante, seus pés parecem cansados, de onde vens?'");
-        respostas.origem = scanner.nextLine();
+        respostas.origem = scanner.next();
 
         System.out.println("\n~ Mercador ~\n 'Definitivamente foi uma caminhada SHISHISHI!, mas para onde vosmecê pretendes ir?'");
-        respostas.destino = scanner.nextLine();
+        respostas.destino = scanner.next();
 
         System.out.println("\n~ Mercador ~\n 'Uma última pergunta grande cavalheiro, vóis não tem interesse em trocar algumas de suas \n" +
                 "moedas para aumentar o limiar da poderosa jóia em sua posse?' (S/N)");
-        respostas.decisao = scanner.nextLine();
+        respostas.decisao = scanner.next();
 
         return respostas;
     }
