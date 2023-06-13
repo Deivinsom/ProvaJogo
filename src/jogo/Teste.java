@@ -2,8 +2,9 @@ package src.jogo;
 
 public class Teste {
     public static void main(String[] args) {
-        Mercador me = new Mercador();
+        Menu me = new Menu();
 
-        me.perguntasMercador();
+        me.menuInical();
+
     }
 }
