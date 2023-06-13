@@ -30,6 +30,7 @@ public class Viagem {
                 peso = sc.nextInt();
             }
         }
+        sc.close();
         return destinos.get(peso-1);
 
     }
