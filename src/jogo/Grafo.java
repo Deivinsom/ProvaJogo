@@ -34,7 +34,7 @@ public class Grafo {
             for (Aresta aresta : arestas) {
                 if(vertice.getCidade().getValorRota() == aresta.getPeso()){
                     System.out.println(aresta.getDestino().getCidade().getNome());
-
+                    System.out.println("A");
                 }
             }
             System.out.println();
