@@ -1,5 +1,7 @@
 package src.jogo;
 
+//import java.util.ArrayList;
+//import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -42,10 +44,10 @@ public class Menu {
         return escolha;
     }
 
-    public int menuPrincipal() {
-        Mercador mercador = new Mercador();
+    public void menuPrincipal() {
+        //List<Integer> mercador = new ArrayList<>();
         
-        mercador = mercador.perguntasMercador();
+        //(mercador).perguntasMercador();
 
         //if(missaoAtual == true) {
         //    System.out.println("Deseja desistir da missao atual?");
@@ -60,6 +62,20 @@ public class Menu {
         //System.out.println(this.cidade.possibilidades());
         //Cidade decisao = scanner.Next();
 
-        return 0;
+    }
+
+    public static void limparConsole() {
+        final String sistemaOperacional = System.getProperty("os.name");
+
+        try {
+            if (sistemaOperacional.contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (Exception e) {
+
+        }
     }
 }
