@@ -108,12 +108,13 @@ public class Menu {
     }
 
     public void menuViagem(){
+        MapaGrafo mapa = new MapaGrafo();
         Vertice destino = new Vertice();
 
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
-        destino = viagem.mostrarDestinos(main.max.getCidadeAtual());
+        destino = viagem.mostrarDestinos(main.max.getCidadeAtual(),mapa);
 
         viagem.fazerViagem(main.max, destino);
         menuPrincipal();

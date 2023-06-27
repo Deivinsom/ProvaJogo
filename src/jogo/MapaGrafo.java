@@ -1,7 +1,7 @@
 package src.jogo;
 
 public class MapaGrafo {
-    static Grafo grafo = new Grafo();
+     static Grafo grafo = new Grafo();
 //Adiconando os vertices com as cidades ao grafo
     public static void addCidades() {
         grafo.addVertice(ConstruirCidades.ubud());
