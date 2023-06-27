@@ -79,8 +79,15 @@ public class Menu {
         } else if (escolha == 2) {
             menuMissao();
         } else if (escolha == 3){
-            ExibirImagem imagem = new ExibirImagem();
-            imagem.mostrarImagem();
+            try {
+                ExibirImagem imagem = new ExibirImagem(); // Mostra a imagem e retorna ao menu principal ao fechar o mapa.
+                imagem.mostrarImagem();
+                Thread.sleep(2000);
+
+                menuPrincipal();
+            } catch (InterruptedException e) {
+
+            }
         } else {
             System.exit(0);
         }       
