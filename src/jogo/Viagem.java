@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Viagem {
+    Scanner sc = new Scanner(System.in);
     //Mostrar os destinos possíveis
     public Vertice mostrarDestinos(int peso) {
-        Scanner sc = new Scanner(System.in);
 
         boolean verificador = false;
         MapaGrafo.addCaminhos();
@@ -15,11 +15,13 @@ public class Viagem {
         ArrayList<Integer> escolhas = new ArrayList<>();
         ArrayList<Vertice> destinos = MapaGrafo.grafo.imprimirDestinos(peso);
 
-        System.out.println("Escolha o caminho:");
         for (int i = 0; i < destinos.size(); i++) {
             System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome());
             escolhas.add(i + 1);
         }
+        System.out.println("\n 9. Voltar.");
+        Menu me = new Menu();
+        me.criarLinhas();
 
         peso = sc.nextInt();
         while (verificador == false) {
@@ -30,19 +32,16 @@ public class Viagem {
                 for (int i = 0; i < destinos.size(); i++) {
                     System.out.println(i + 1 + ") " + destinos.get(i).getCidade().getNome());
                     System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome());
-
                 }
 
                 peso = sc.nextInt();
             }
         }
 
-        sc.close();
         return destinos.get(peso-1);
-
     }
 
-    //Fazer Viagem
+    //Fazer viagem para a cidade escolhida.
     public void fazerViagem(Maxwell max, Vertice destino) {
         max.setCidadeAtual(destino.getCidade().getId());
         max.setMoedas(max.getMoedas()-1);
