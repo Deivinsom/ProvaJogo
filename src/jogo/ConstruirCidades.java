@@ -1,7 +1,6 @@
 package src.jogo;
 
 public class ConstruirCidades {
-
     // Construindo as cidades do mapa
 
     public static Vertice ubud() {

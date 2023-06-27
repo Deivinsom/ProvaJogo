@@ -11,7 +11,7 @@ public class Viagem {
         boolean verificador = false;
 
         ArrayList<Integer> escolhas = new ArrayList<>();
-        ArrayList<Vertice> destinos = mapa.grafo.imprimirDestinos(peso);
+        ArrayList<Vertice> destinos = MapaGrafo.grafo.imprimirDestinos(peso);
 
         for (int i = 0; i < destinos.size(); i++) {
             System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome());
@@ -23,7 +23,9 @@ public class Viagem {
 
         int id = sc.nextInt();
         while (verificador == false) {
-            if (escolhas.contains(id)) {
+            if (id == 9) {
+                me.menuPrincipal();
+            } else if (escolhas.contains(id)) {
                 verificador = true;
             } else {
                 System.out.println("Digite um número válido");

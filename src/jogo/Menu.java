@@ -51,6 +51,8 @@ public class Menu {
     }
 
     public void menuPrincipal() { // Menu Principal do jogo, aparece após as perguntas do mercador.
+        // Mercador
+        
         limparConsole();
 
         // Apenas para melhorar a experiência do usuário.
@@ -61,24 +63,14 @@ public class Menu {
         System.out.println(" 2. Ver missão.");
         System.out.println(" 3. Ver mapa.\n");
         System.out.println(" 9. Sair do jogo.");
-        System.out.println("----------------------------------------------"); // Linha que não é utilizada em nenhuma outra parte.
+
+        // Linha que não é utilizada em nenhuma outra parte.
+        System.out.println("----------------------------------------------"); 
 
         // Mostra as moedas atuais que o jogador tem, poder atual da joia e limiar atual da joia.
-        System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() +  " | Limiar: " + main.joia.getPoderJoia());
-        
+        System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() + 
+                " | Limiar: " + main.joia.getPoderJoia());
         criarLinhas();
-
-        if (main.max.getMoedas() == 0) {
-            try {
-                Menu me = new Menu();
-                me.limparConsole();
-                System.out.println("~ Max ficou sem moedas! O jogo acabou. ~");
-                Thread.sleep(2300);
-                System.exit(0);
-            } catch (Exception e) {
-
-            }
-        }
        
         escolha = scanner.nextInt(); // recebe a escolha do usuário e previne alguns erros.
         while (escolha < 1 || escolha > 3 && escolha != 9) {
@@ -93,8 +85,9 @@ public class Menu {
         } else if (escolha == 2) {
             menuMissao();
         } else if (escolha == 3){
+            // Mostra a imagem e retorna ao menu principal ao fechar o mapa.
             try {
-                ExibirImagem imagem = new ExibirImagem(); // Mostra a imagem e retorna ao menu principal ao fechar o mapa.
+                ExibirImagem imagem = new ExibirImagem(); 
                 imagem.mostrarImagem();
                 Thread.sleep(2000);
 
@@ -117,15 +110,19 @@ public class Menu {
         destino = viagem.mostrarDestinos(main.max.getCidadeAtual(),mapa);
 
         viagem.fazerViagem(main.max, destino);
+        
+        // Maxwell so morre quando ele não tem mais dinheiro para fazer a viagem e ainda sim tenta faze-la.
+        if (main.max.getMoedas() == -1) { 
+            try {
+                limparConsole();
+                System.out.println("~ Max ficou sem moedas! O jogo acabou. ~");
+                Thread.sleep(2300);
+                System.exit(0);
+            } catch (Exception e) {
+
+            }
+        }
         menuPrincipal();
-
-        try {
-            System.out.println("Escolha uma opção válida. Voltando ao menu principal...");
-            Thread.sleep(2400);
-            menuPrincipal();
-        } catch (Exception e) {
-
-        } 
     }
 
     public void menuMissao() {
