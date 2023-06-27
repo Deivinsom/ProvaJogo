@@ -104,7 +104,7 @@ public class Menu {
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
-        destinos = viagem.mostrarDestinos(main.max.getcidadeAtual());
+        destinos.add(viagem.mostrarDestinos(main.max.getCidadeAtual()));
         System.out.println("\n 9. Voltar.");
         criarLinhas();
 
@@ -136,21 +136,33 @@ public class Menu {
                     break;
 
                 case 3:
+                    viagem.fazerViagem(main.max, destinos.get(3));
+                    menuPrincipal();
                     break;
 
                 case 4:
+                    viagem.fazerViagem(main.max, destinos.get(4));
+                    menuPrincipal();
                     break;
 
                 case 5:
+                    viagem.fazerViagem(main.max, destinos.get(5));
+                    menuPrincipal();
                     break;
 
                 case 6:
+                    viagem.fazerViagem(main.max, destinos.get(6));
+                    menuPrincipal();
                     break;
 
                 case 7:
+                    viagem.fazerViagem(main.max, destinos.get(7));
+                    menuPrincipal();
                     break;
 
                 case 8:
+                    viagem.fazerViagem(main.max, destinos.get(8));
+                    menuPrincipal();
                     break;
 
                 case 9:
@@ -182,7 +194,7 @@ public class Menu {
     }
 
     public void menuMissao() {
-        //if () {
+        //if (main.max.getCidadeAtual().getMissao() != null) {
 
         //}
 

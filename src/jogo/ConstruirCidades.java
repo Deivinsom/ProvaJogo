@@ -77,7 +77,10 @@ public class ConstruirCidades {
     }
 
     public static Vertice vuneseEmpire() {
-        Cidade vuneseEmpire = new Cidade("Vunese Empire", null, 0, 11);
+        Missao missao = new Missao("Glória dos Retornados",
+                "Vá até Ubud e recebe a Glória dos Retornados", 
+                1, 10, -4);
+        Cidade vuneseEmpire = new Cidade("Vunese Empire", missao, 0, 11);
         Vertice novo = new Vertice(vuneseEmpire);
         return novo;
     }
