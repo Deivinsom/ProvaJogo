@@ -1,6 +1,6 @@
 package src.jogo;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
 //import java.util.List;
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class Menu {
 
     Scanner scanner = new Scanner(System.in);
 
-    public void dialogoInicial() {
+    public void dialogoInicial() { // apenas para entretenimento, nenhum processamento de nada aqui.
         try {
         System.out.println("\n      DEATH STRANDING 3" + "\n------------------------------");
         System.out.println("Pressione <ENTER> para começar...");
@@ -52,9 +52,10 @@ public class Menu {
         }
     }
 
-    public void menuPrincipal() {
+    public void menuPrincipal() { // Menu Principal do jogo, aparece após as perguntas do mercador.
         limparConsole();
 
+        // Apenas para melhorar a experiência do usuário.
         criarLinhas();
         System.out.println("                Menu Principal");
         criarLinhas();
@@ -62,11 +63,14 @@ public class Menu {
         System.out.println(" 2. Ver missão.");
         System.out.println(" 3. Ver mapa.\n");
         System.out.println(" 9. Sair do jogo.");
-        System.out.println("----------------------------------------------");
-        System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() +  " | Limiar: " + main.joia.getPoderJoia());
-        criarLinhas();
+        System.out.println("----------------------------------------------"); // Linha que não é utilizada em nenhuma outra parte.
 
-        escolha = scanner.nextInt();
+        // Mostra as moedas atuais que o jogador tem, poder atual da joia e limiar atual da joia.
+        System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() +  " | Limiar: " + main.joia.getPoderJoia());
+        
+        criarLinhas();
+       
+        escolha = scanner.nextInt(); // recebe a escolha do usuário e previne alguns erros.
         while (escolha < 1 || escolha > 3 && escolha != 9) {
             System.out.println("Escolha um opção válida.");
             escolha = scanner.nextInt();
@@ -89,18 +93,18 @@ public class Menu {
 
             }
         } else {
-            System.exit(0);
+            System.exit(0); // Finaliza o programa.
         }       
     }
 
     public void menuViagem(){
-        int qntDestinos = 0;
+        ArrayList<Vertice> destinos = new ArrayList<>();
         int escolha = 0; 
 
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
-        qntDestinos = viagem.mostrarDestinos(main.max.getcidadeAtual());
+        destinos = viagem.mostrarDestinos(main.max.getcidadeAtual());
         System.out.println("\n 9. Voltar.");
         criarLinhas();
 
@@ -110,7 +114,7 @@ public class Menu {
             scanner.next(); // Descarta o próximo token não inteiro
         }
 
-        while (escolha < 1 || escolha > qntDestinos && escolha != 9) {
+        while (escolha < 1 || escolha > destinos.size() && escolha != 9) {
             System.out.println("Escolha um opção válida.");
             if (scanner.hasNextInt()) {
                 escolha = scanner.nextInt();
@@ -119,30 +123,62 @@ public class Menu {
             }
         }
 
-        switch (escolha) {
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        case 5:
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        case 8:
-            break;
-        case 9:
-            menuPrincipal();
-            break;
-        default:
-            break;
+        if (escolha <= destinos.size()) {
+            switch (escolha) {
+                case 1:
+                    viagem.fazerViagem(main.max, destinos.get(1));
+                    menuPrincipal();
+                    break;
+
+                case 2:
+                    viagem.fazerViagem(main.max, destinos.get(2));
+                    menuPrincipal();
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
+                    break;
+
+                case 5:
+                    break;
+
+                case 6:
+                    break;
+
+                case 7:
+                    break;
+
+                case 8:
+                    break;
+
+                case 9:
+                    menuPrincipal();
+                    break;
+
+                default:
+                    try {
+                        System.out.println("Selecione uma opção válida. Voltando ao menu principal...");
+                        Thread.sleep(2400);
+                        menuPrincipal();
+                        break;
+                    } catch (Exception e) {
+
+                    }
+
+            }
+        } else {
+            try {
+                System.out.println("Escolha uma opção válida. Voltando ao menu principal...");
+                Thread.sleep(2400);
+                menuPrincipal();
+            } catch (Exception e) {
+
+            } 
         }
-        menuPrincipal();
+
+        destinos.clear();
     }
 
     public void menuMissao() {
@@ -152,7 +188,7 @@ public class Menu {
 
     }
 
-    public void limparConsole() {
+    public void limparConsole() { // Limpa o console ¯\_(ツ)_/¯
         final String sistemaOperacional = System.getProperty("os.name");
 
         try {
@@ -167,7 +203,7 @@ public class Menu {
         }
     }
 
-    public void criarLinhas() {
+    public void criarLinhas() { // Linhas padronizadas do menu.
         System.out.println("+--------------------------------------------+");
     }
 }
