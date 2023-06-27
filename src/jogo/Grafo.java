@@ -6,6 +6,7 @@ public class Grafo {
     private ArrayList<Vertice> vertices;
     private ArrayList<Aresta> arestas;
 
+    // Criando Objeto Grafo
     public Grafo() {
         this.arestas = new ArrayList<>();
         this.vertices = new ArrayList<>();
@@ -15,30 +16,17 @@ public class Grafo {
         return arestas;
     }
 
+    // Adiocionar vertices
     public void addVertice(Vertice vertice) {
         vertices.add(vertice);
     }
 
+    // Adicionar arestas
     public void addAresta(int peso, Vertice origem, Vertice destino) {
         Aresta aresta = new Aresta(peso, origem, destino);
         origem.addAresta(aresta);
         destino.addAresta(aresta);
         arestas.add(aresta);
-    }
-
-    public void imPrimirMapa() {
-        MapaGrafo.addCaminhos();
-        MapaGrafo.addCidades();
-        for (Vertice vertice : vertices) {
-            System.out.println("Conexões de " + vertice.getCidade().getNome() + ":");
-            for (Aresta aresta : arestas) {
-                if(vertice.getCidade().getId() == aresta.getPeso()){
-                    System.out.println(aresta.getDestino().getCidade().getNome());
-                    System.out.println("A");
-                }
-            }
-            System.out.println();
-        }
     }
 
     public void imprimirVertices() {
