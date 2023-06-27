@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Menu {
     static Main main = new Main();
     static Viagem viagem = new Viagem();
-    private int escolha;
+    private int escolha = -1;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -54,49 +54,88 @@ public class Menu {
 
     public void menuPrincipal() {
         limparConsole();
-        
-        escolha = 0;
 
-        while(escolha != 9) {
-            criarLinhas();
-            System.out.println("                Menu Principal");
-            criarLinhas();
-            System.out.println(" 1. Viajar para a próxima cidade.");
-            System.out.println(" 2. Ver missão.");
-            System.out.println(" 3. Ver mapa.\n");
-            System.out.println(" 9. Sair do jogo.");
-            System.out.println("----------------------------------------------");
-            System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() +  " | Limiar: " + main.joia.getPoderJoia());
-            criarLinhas();
+        criarLinhas();
+        System.out.println("                Menu Principal");
+        criarLinhas();
+        System.out.println(" 1. Viajar para a próxima cidade.");
+        System.out.println(" 2. Ver missão.");
+        System.out.println(" 3. Ver mapa.\n");
+        System.out.println(" 9. Sair do jogo.");
+        System.out.println("----------------------------------------------");
+        System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() +  " | Limiar: " + main.joia.getPoderJoia());
+        criarLinhas();
 
+        escolha = scanner.nextInt();
+        while (escolha < 1 || escolha > 3 && escolha != 9) {
+            System.out.println("Escolha um opção válida.");
             escolha = scanner.nextInt();
-            while (escolha < 1 || escolha > 3 && escolha != 9) {
-                System.out.println("Escolha um opção válida.");
-                escolha = scanner.nextInt();
-            }
-
-            limparConsole();
-
-            if (escolha == 1) {
-                menuViagem();
-            } else if (escolha == 2) {
-                menuMissao();
-            } else {
-                ExibirImagem imagem = new ExibirImagem();
-                imagem.mostrarImagem();
-            }            
         }
+
+        limparConsole();
+
+        if (escolha == 1) {
+            menuViagem();
+        } else if (escolha == 2) {
+            menuMissao();
+        } else if (escolha == 3){
+            ExibirImagem imagem = new ExibirImagem();
+            imagem.mostrarImagem();
+        } else {
+            System.exit(0);
+        }       
     }
 
     public void menuViagem(){
+        int qntDestinos = 0;
+        int escolha = 0; 
+
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
-        viagem.mostrarDestinos(main.max.getcidadeAtual());
-        System.out.println(" 9. Voltar.");
+        qntDestinos = viagem.mostrarDestinos(main.max.getcidadeAtual());
+        System.out.println("\n 9. Voltar.");
         criarLinhas();
 
-        
+        if (scanner.hasNextInt()) {
+            escolha = scanner.nextInt();
+        } else {
+            scanner.next(); // Descarta o próximo token não inteiro
+        }
+
+        while (escolha < 1 || escolha > qntDestinos && escolha != 9) {
+            System.out.println("Escolha um opção válida.");
+            if (scanner.hasNextInt()) {
+                escolha = scanner.nextInt();
+            } else {
+                scanner.next();
+            }
+        }
+
+        switch (escolha) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
+            break;
+        case 8:
+            break;
+        case 9:
+            menuPrincipal();
+            break;
+        default:
+            break;
+        }
+        menuPrincipal();
     }
 
     public void menuMissao() {

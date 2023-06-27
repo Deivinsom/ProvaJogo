@@ -1,13 +1,11 @@
 package src.jogo;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Viagem {
-    public Vertice mostrarDestinos(int peso) {
-        Scanner sc = new Scanner(System.in);
+    public int mostrarDestinos(int peso) {
+        int quantidade = 0;
 
-        boolean verificador = false;
         MapaGrafo.addCaminhos();
         MapaGrafo.addCidades();
 
@@ -17,30 +15,15 @@ public class Viagem {
         for (int i = 0; i < destinos.size(); i++) {
             System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome());
             escolhas.add(i + 1);
+            quantidade++;
         }
 
-        peso = sc.nextInt();
-        while (verificador == false) {
-            if (escolhas.contains(peso)) {
-                verificador = true;
-
-            } else {
-                System.out.println("Digite um número válido");
-                for (int i = 0; i < destinos.size(); i++) {
-                    System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome());
-
-                }
-                peso = sc.nextInt();
-            }
-        }
-
-        sc.close();
-        return destinos.get(peso-1);
+        return quantidade;
     }
 
     public static void fazerViagem(Maxwell max, Vertice destino) {
         System.out.println("antes"+max.getcidadeAtual());
-        max.setcidadeAtual(destino.getCidade().getValorRota());
+        max.setcidadeAtual(destino.getCidade().getId());
         System.out.println("dps"+max.getcidadeAtual());
     }
 }
