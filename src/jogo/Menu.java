@@ -67,6 +67,18 @@ public class Menu {
         System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() +  " | Limiar: " + main.joia.getPoderJoia());
         
         criarLinhas();
+
+        if (main.max.getMoedas() == 0) {
+            try {
+                Menu me = new Menu();
+                me.limparConsole();
+                System.out.println("~ Max ficou sem moedas! O jogo acabou. ~");
+                Thread.sleep(2300);
+                System.exit(0);
+            } catch (Exception e) {
+
+            }
+        }
        
         escolha = scanner.nextInt(); // recebe a escolha do usuário e previne alguns erros.
         while (escolha < 1 || escolha > 3 && escolha != 9) {

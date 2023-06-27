@@ -45,16 +45,5 @@ public class Viagem {
     public void fazerViagem(Maxwell max, Vertice destino) {
         max.setCidadeAtual(destino.getCidade().getId());
         max.setMoedas(max.getMoedas()-1);
-        if (max.getMoedas() == 0) {
-            try {
-                Menu me = new Menu();
-                me.limparConsole();
-                System.out.println("~ Max ficou sem moedas! O jogo acabou. ~");
-                Thread.sleep(2300);
-                System.exit(0);
-            } catch (Exception e) {
-
-            }
-        }
     }
 }
