@@ -98,14 +98,13 @@ public class Menu {
     }
 
     public void menuViagem(){
-        ArrayList<Vertice> destinos = new ArrayList<>();
         int escolha = 0; 
-
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
-        destinos = viagem.mostrarDestinos(main.max.getcidadeAtual());
+        ArrayList<Vertice> destinos = viagem.mostrarDestinos(main.max.getcidadeAtual());
         System.out.println("\n 9. Voltar.");
+
         criarLinhas();
 
         if (scanner.hasNextInt()) {
@@ -126,12 +125,13 @@ public class Menu {
         if (escolha <= destinos.size()) {
             switch (escolha) {
                 case 1:
-                    viagem.fazerViagem(main.max, destinos.get(1));
+                    viagem.fazerViagem(main.max, destinos.get(escolha-1));
                     menuPrincipal();
+                    destinos.clear();
                     break;
 
                 case 2:
-                    viagem.fazerViagem(main.max, destinos.get(2));
+                    viagem.fazerViagem(main.max, destinos.get(escolha-1));
                     menuPrincipal();
                     break;
 

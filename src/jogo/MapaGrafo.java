@@ -36,10 +36,10 @@ public class MapaGrafo {
         grafo.addAresta(ConstruirCidades.principalityOfNekika().getCidade().getId(), ConstruirCidades.principalityOfNekika(), ConstruirCidades.kingdomOfLegmod());
         grafo.addAresta(ConstruirCidades.principalityOfNekika().getCidade().getId(), ConstruirCidades.principalityOfNekika(), ConstruirCidades.principalityOfGritestar());
 
-        grafo.addAresta(ConstruirCidades.principalityOfNekika().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.principalityOfNekika());
-        grafo.addAresta(ConstruirCidades.principalityOfNekika().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.kingdomOfLegmod());
-        grafo.addAresta(ConstruirCidades.principalityOfNekika().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.protectorateOfDogrove());
-        grafo.addAresta(ConstruirCidades.principalityOfNekika().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.kingdomOfLastwatch());
+        grafo.addAresta(ConstruirCidades.principalityOfGritestar().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.principalityOfNekika());
+        grafo.addAresta(ConstruirCidades.principalityOfGritestar().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.kingdomOfLegmod());
+        grafo.addAresta(ConstruirCidades.principalityOfGritestar().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.protectorateOfDogrove());
+        grafo.addAresta(ConstruirCidades.principalityOfGritestar().getCidade().getId(), ConstruirCidades.principalityOfGritestar(), ConstruirCidades.kingdomOfLastwatch());
 
         grafo.addAresta(ConstruirCidades.protectorateOfDogrove().getCidade().getId(), ConstruirCidades.protectorateOfDogrove(), ConstruirCidades.kingdomOfLegmod());
         grafo.addAresta(ConstruirCidades.protectorateOfDogrove().getCidade().getId(), ConstruirCidades.protectorateOfDogrove(), ConstruirCidades.principalityOfGritestar());
