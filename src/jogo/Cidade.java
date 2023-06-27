@@ -6,6 +6,10 @@ public class Cidade {
     private int alterarJoia;
     private int id;
 
+    public Cidade() {
+        
+    }
+
     public Cidade(String nome, Missao missao, int alterarJoia, int id) {
         this.missao = missao;
         this.nome = nome;

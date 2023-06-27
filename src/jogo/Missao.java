@@ -7,6 +7,10 @@ public class Missao {
     private int recomCompletar;
     private int alterarJoia;
 
+    public Missao() {
+        
+    }
+
     public Missao(String titulo, String text, int recomAceitar, int recomCompletar, int alterarJoia) {
         this.text = text;
         this.titulo = titulo;

@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Menu {
     static Main main = new Main();
     static Viagem viagem = new Viagem();
+    private Vertice missaoAtual = new Vertice();
+    private boolean temMissao = false;
     private int escolha = -1;
 
     Scanner scanner = new Scanner(System.in);
@@ -43,7 +45,8 @@ public class Menu {
 
         System.out.println("\n* Ubud possui apenas duas fronteiras com outras cidades, Kingdom of Legmod e Principality \n" + 
                 "of Nekika. Para ir de uma cidade a outra você deve ter no mínimo 1 moeda de transporte *");
-        Thread.sleep(2000);
+        System.out.println("\nPressione <ENTER> para continuar");
+        scanner.nextLine();
 
         } catch (InterruptedException e) {
 
@@ -51,9 +54,18 @@ public class Menu {
     }
 
     public void menuPrincipal() { // Menu Principal do jogo, aparece após as perguntas do mercador.
-        // Mercador
-        
         limparConsole();
+        
+        // Mercador()
+
+        limparConsole();
+
+        if (MapaGrafo.grafo.verificarMissao(main.max.getCidadeAtual())) {
+            criarLinhas();
+            System.out.println("        ~ Essa cidade tem uma missão! ~");
+            criarLinhas();
+            System.out.println();
+        }
 
         // Apenas para melhorar a experiência do usuário.
         criarLinhas();
@@ -62,7 +74,8 @@ public class Menu {
         System.out.println(" 1. Viajar para a próxima cidade.");
         System.out.println(" 2. Ver missão.");
         System.out.println(" 3. Ver mapa.\n");
-        System.out.println(" 9. Sair do jogo.");
+        System.out.println(" 9. Sair do jogo.\n");
+        System.out.println(" Cidade atual: " + MapaGrafo.grafo.imprimirNome(main.max.getCidadeAtual()));
 
         // Linha que não é utilizada em nenhuma outra parte.
         System.out.println("----------------------------------------------"); 
@@ -126,10 +139,104 @@ public class Menu {
     }
 
     public void menuMissao() {
-        //if (main.max.getCidadeAtual().getMissao() != null) {
+        Vertice cidadeAtual = new Vertice();
+        cidadeAtual = MapaGrafo.grafo.imprimirVertice(main.max.getCidadeAtual());
 
-        //}
+        if (temMissao == true) {
+            int opcaoEscolhida = 0;
+            
+            criarLinhas();
+            System.out.println("                2. Ver missão.");
+            criarLinhas();
+            System.out.println("\n       Você tem uma missão ativa.\n");
+            System.out.println(missaoAtual.getCidade().getMissao().getText());
+            System.out.println("\n ~ Deseja desistir dela? ~" + 
+                    "\n 1. Sim" + 
+                    "\n 2. Não" + 
+                    "\n\n 9. Voltar");
+            criarLinhas();
 
+            opcaoEscolhida = scanner.nextInt();
+            while (opcaoEscolhida < 1 || opcaoEscolhida > 2 && opcaoEscolhida != 9) {
+                System.out.println("Escolha um opção válida.");
+                escolha = scanner.nextInt();
+            }
+
+            if (opcaoEscolhida == 1) {
+                try {
+                    temMissao = false;
+                    missaoAtual = null;
+                    cidadeAtual.getCidade().setMissao(null);
+
+                    System.out.println("\n ~ Missão Abortada! ~");
+                    Thread.sleep(2000);
+                    menuPrincipal();
+                } catch (Exception e) {
+
+                }
+            } else {
+                menuPrincipal();
+            }
+
+        } else if (MapaGrafo.grafo.verificarMissao(main.max.getCidadeAtual())) {
+            int opcaoEscolhida = 0;
+
+            criarLinhas();
+            System.out.println("                2. Ver missão.");
+            criarLinhas();
+
+            System.out.println(cidadeAtual.getCidade().getMissao().getText());
+            System.out.println("\n -> Prêmio por aceitar:\n  - " + cidadeAtual.getCidade().getMissao().getRecomAceitar() + 
+                    " Moedas de Transporte");
+            System.out.println("\n -> Prêmio por concluir:\n  - " + 
+                    cidadeAtual.getCidade().getMissao().getRecomCompletar() + " Moedas de transporte\n  - O limiar da jóia aumenta em " + 
+                    cidadeAtual.getCidade().getMissao().getAlterarJoia() + " pontos");
+
+            System.out.println("\n ~ Você aceita a missão? ~" + "\n 1. Sim" + "\n 2. Não" + "\n\n 9. Voltar");
+            criarLinhas();
+
+            opcaoEscolhida = scanner.nextInt();
+            while (opcaoEscolhida < 1 || opcaoEscolhida > 2 && opcaoEscolhida != 9) {
+                System.out.println("Escolha um opção válida.");
+                escolha = scanner.nextInt();
+            }
+
+            if (opcaoEscolhida == 1) {
+                try {
+                    temMissao = true;
+                    missaoAtual = cidadeAtual;
+                    System.out.println("\n ~ Missão Aceita! ~");
+                    Thread.sleep(2000);
+                    menuPrincipal();
+                } catch (Exception e) {
+            
+                }
+            } else {
+                menuPrincipal();
+            }
+        } else {
+            int voltar = 0;
+
+            criarLinhas();
+            System.out.println("                2. Ver missão.");
+            criarLinhas();
+            System.out.println("\n      ~ Essa cidade não tem missão ~\n");
+            System.out.println(" 9. Voltar");
+            criarLinhas();
+
+            voltar = scanner.nextInt();
+            if (voltar != 9) {
+                try {
+                    System.out.println("Você so tinha uma opção e ainda assim... Voltando ao menu...");
+                    Thread.sleep(2300);
+                    menuPrincipal();
+                } catch (Exception e) {
+
+                }
+            } else {
+                menuPrincipal();
+            }
+        }
     }
 
     public void limparConsole() { // Limpa o console ¯\_(ツ)_/¯

@@ -9,16 +9,17 @@ public class MapaGrafo {
         grafo.addVertice(ConstruirCidades.principalityOfNekika());
         grafo.addVertice(ConstruirCidades.principalityOfGritestar());
         grafo.addVertice(ConstruirCidades.protectorateOfDogrove());
-        grafo.addVertice(ConstruirCidades.kingdomOfOldcalia());
         grafo.addVertice(ConstruirCidades.kingdomOfLastwatch());
         grafo.addVertice(ConstruirCidades.grandDuchyOfSmalia());
+        grafo.addVertice(ConstruirCidades.kingdomOfOldcalia());
+        grafo.addVertice(ConstruirCidades.defalsia());
         grafo.addVertice(ConstruirCidades.kingdomOfKalb());
         grafo.addVertice(ConstruirCidades.aymarLeague());
         grafo.addVertice(ConstruirCidades.vuneseEmpire());
-        grafo.addVertice(ConstruirCidades.bun());
-        grafo.addVertice(ConstruirCidades.nargumun());
-        grafo.addVertice(ConstruirCidades.chandirSultanate());
         grafo.addVertice(ConstruirCidades.principalityOfKarhora());
+        grafo.addVertice(ConstruirCidades.nargumun());
+        grafo.addVertice(ConstruirCidades.bun());
+        grafo.addVertice(ConstruirCidades.chandirSultanate());
         grafo.addVertice(ConstruirCidades.principalityOfKasya());
     }
 // Adicionando as Fronteiras
