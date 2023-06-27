@@ -12,7 +12,6 @@ public class Viagem {
         MapaGrafo.addCaminhos();
         MapaGrafo.addCidades();
 
-        ArrayList<Integer> escolhas = new ArrayList<>();
         ArrayList<Vertice> destinos = MapaGrafo.grafo.imprimirDestinos(peso);
 
         for (int i = 0; i < destinos.size(); i++) {
