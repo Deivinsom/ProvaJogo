@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Grafo {
     private ArrayList<Vertice> vertices;
     private ArrayList<Aresta> arestas;
+    private ArrayList<Vertice> cidadesVizinhas = new ArrayList<>();
 
     // Criando Objeto Grafo
     public Grafo() {
@@ -36,7 +37,7 @@ public class Grafo {
     }
 
     public ArrayList<Vertice> imprimirDestinos(int peso) {
-        ArrayList<Vertice> cidadesVizinhas = new ArrayList<>();
+        cidadesVizinhas.clear();
         for (Aresta aresta : arestas) {
             if (peso == aresta.getPeso()) {
                 cidadesVizinhas.add(aresta.getDestino());

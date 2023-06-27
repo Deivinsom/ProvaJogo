@@ -1,7 +1,5 @@
 package src.jogo;
 
-import java.util.ArrayList;
-//import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -69,6 +67,18 @@ public class Menu {
         System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() +  " | Limiar: " + main.joia.getPoderJoia());
         
         criarLinhas();
+
+        if (main.max.getMoedas() == 0) {
+            try {
+                Menu me = new Menu();
+                me.limparConsole();
+                System.out.println("~ Max ficou sem moedas! O jogo acabou. ~");
+                Thread.sleep(2300);
+                System.exit(0);
+            } catch (Exception e) {
+
+            }
+        }
        
         escolha = scanner.nextInt(); // recebe a escolha do usuário e previne alguns erros.
         while (escolha < 1 || escolha > 3 && escolha != 9) {
@@ -98,91 +108,27 @@ public class Menu {
     }
 
     public void menuViagem(){
-        int escolha = 0; 
+        Vertice destino = new Vertice();
+
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
-        ArrayList<Vertice> destinos = viagem.mostrarDestinos(main.max.getcidadeAtual());
-        System.out.println("\n 9. Voltar.");
+        destino = viagem.mostrarDestinos(main.max.getCidadeAtual());
 
-        criarLinhas();
+        viagem.fazerViagem(main.max, destino);
+        menuPrincipal();
 
-        if (scanner.hasNextInt()) {
-            escolha = scanner.nextInt();
-        } else {
-            scanner.next(); // Descarta o próximo token não inteiro
-        }
+        try {
+            System.out.println("Escolha uma opção válida. Voltando ao menu principal...");
+            Thread.sleep(2400);
+            menuPrincipal();
+        } catch (Exception e) {
 
-        while (escolha < 1 || escolha > destinos.size() && escolha != 9) {
-            System.out.println("Escolha um opção válida.");
-            if (scanner.hasNextInt()) {
-                escolha = scanner.nextInt();
-            } else {
-                scanner.next();
-            }
-        }
-
-        if (escolha <= destinos.size()) {
-            switch (escolha) {
-                case 1:
-                    viagem.fazerViagem(main.max, destinos.get(escolha-1));
-                    menuPrincipal();
-                    destinos.clear();
-                    break;
-
-                case 2:
-                    viagem.fazerViagem(main.max, destinos.get(escolha-1));
-                    menuPrincipal();
-                    break;
-
-                case 3:
-                    break;
-
-                case 4:
-                    break;
-
-                case 5:
-                    break;
-
-                case 6:
-                    break;
-
-                case 7:
-                    break;
-
-                case 8:
-                    break;
-
-                case 9:
-                    menuPrincipal();
-                    break;
-
-                default:
-                    try {
-                        System.out.println("Selecione uma opção válida. Voltando ao menu principal...");
-                        Thread.sleep(2400);
-                        menuPrincipal();
-                        break;
-                    } catch (Exception e) {
-
-                    }
-
-            }
-        } else {
-            try {
-                System.out.println("Escolha uma opção válida. Voltando ao menu principal...");
-                Thread.sleep(2400);
-                menuPrincipal();
-            } catch (Exception e) {
-
-            } 
-        }
-
-        destinos.clear();
+        } 
     }
 
     public void menuMissao() {
-        //if () {
+        //if (main.max.getCidadeAtual().getMissao() != null) {
 
         //}
 

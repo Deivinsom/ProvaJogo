@@ -27,11 +27,11 @@ public class Maxwell {
         this.limitador = limitador;
     }
 
-    public int getcidadeAtual() {
+    public int getCidadeAtual() {
         return cidadeAtual;
     }
 
-    public void setcidadeAtual(int cidadeAtual) {
+    public void setCidadeAtual(int cidadeAtual) {
         this.cidadeAtual = cidadeAtual;
     }
 

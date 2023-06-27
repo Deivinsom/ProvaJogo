@@ -6,6 +6,10 @@ public class Vertice {
     private Cidade cidade;
     private ArrayList<Aresta> arestas;
 
+    public Vertice(){
+
+    }
+
     public Vertice(Cidade cidade) {
         this.cidade = cidade;
         this.arestas = new ArrayList<>();
