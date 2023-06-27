@@ -4,13 +4,13 @@ public class Cidade {
     private String nome;
     private Missao missao;
     private int alterarJoia;
-    private int valorRota;
+    private int id;
 
-    public Cidade(String nome, Missao missao, int alterarJoia, int valorRota) {
+    public Cidade(String nome, Missao missao, int alterarJoia, int id) {
         this.missao = missao;
         this.nome = nome;
         this.alterarJoia = alterarJoia;
-        this.valorRota = valorRota;
+        this.id = id;
     }
 
     public String getNome() {
@@ -37,12 +37,12 @@ public class Cidade {
         this.alterarJoia = alterarJoia;
     }
 
-    public int getValorRota() {
-        return valorRota;
+    public int getId() {
+        return id;
     }
 
-    public void setValorRota(int valorRota) {
-        this.valorRota = valorRota;
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

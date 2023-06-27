@@ -3,12 +3,12 @@ package src.jogo;
 public class Maxwell {
     private int moedas;
     private int limitador;
-    private int rota;
+    private int cidadeAtual;
 
-    public Maxwell(int moedas, int limitador, int rota) {
+    public Maxwell(int moedas, int limitador, int cidadeAtual) {
         this.moedas = moedas;
         this.limitador = limitador;
-        this.rota = rota;
+        this.cidadeAtual = cidadeAtual;
     }
 
     public int getMoedas() {
@@ -27,12 +27,12 @@ public class Maxwell {
         this.limitador = limitador;
     }
 
-    public int getRota() {
-        return rota;
+    public int getcidadeAtual() {
+        return cidadeAtual;
     }
 
-    public void setRota(int rota) {
-        this.rota = rota;
+    public void setcidadeAtual(int cidadeAtual) {
+        this.cidadeAtual = cidadeAtual;
     }
 
 }

@@ -32,7 +32,7 @@ public class Grafo {
         for (Vertice vertice : vertices) {
             System.out.println("Conexões de " + vertice.getCidade().getNome() + ":");
             for (Aresta aresta : arestas) {
-                if(vertice.getCidade().getValorRota() == aresta.getPeso()){
+                if(vertice.getCidade().getId() == aresta.getPeso()){
                     System.out.println(aresta.getDestino().getCidade().getNome());
                     System.out.println("A");
                 }
