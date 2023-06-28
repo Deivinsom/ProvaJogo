@@ -117,7 +117,13 @@ public class Menu {
         
         mercador.respostasMercador(main.max);
 
-        MenuUtil.concluirMissao(temMissao, missaoAtual, cidadeAtual, main.max);
+        MenuUtil.limparConsole();
+
+        Object[] array = MenuUtil.concluirMissao(temMissao, missaoAtual, cidadeAtual, main.max);
+        if (array != null) {
+            temMissao = (boolean) array[0];
+            missaoAtual = (Vertice) array[1];
+        }
 
         MenuUtil.verificarMoedas(main.max);
 
