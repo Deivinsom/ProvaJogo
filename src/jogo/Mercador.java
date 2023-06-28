@@ -9,6 +9,7 @@ public class Mercador {
 
     public List<Integer> perguntasMercador() {
         List<Integer> lista = new ArrayList<>();
+        int opcao = 0;
 
         System.out.println("\n* Maxwell chega na cidade e é abordado por um mercador *");
 
@@ -16,31 +17,59 @@ public class Mercador {
                 "Quantas de suas moedas estão a salvo?'");
         lista.add(scanner.nextInt());
 
-        System.out.println("\n~ Mercador ~\n 'SHISHISHI! ... Deveras intrigante, seus pés parecem cansados, de onde vens?'" + 
-                "\n1. Ubud");
-        lista.add(scanner.nextInt());
-
-        System.out.println("\n~ Mercador ~\n 'Definitivamente foi uma caminhada SHISHISHI!, mas para onde vosmecê pretendes ir?'");
+        System.out.println("\n~ Mercador ~\n '*risos* *risos* Um outro assunto do qual vosmecê me preocupa um pouco.\n" + 
+                "Essa jóia do qual possui emite certa magia no ar, qual o seu poder atual?'");
         lista.add(scanner.nextInt());
 
         System.out.println("\n~ Mercador ~\n 'Uma última pergunta grande cavalheiro, vóis não tem interesse em trocar algumas de suas \n" +
-                "moedas para aumentar o limiar da poderosa jóia em sua posse?'\n1. Sim\n2. Não ");
-        lista.add(scanner.nextInt());
+                "moedas para aumentar o limite de poder que sua jóia possui?'\n 1. Sim\n 2. Não ");
+        opcao = scanner.nextInt();
+        while (opcao < 1 || opcao > 2) {
+            System.out.println("Escolha uma opção válida.");
+            opcao = scanner.nextInt();
+        }
+        lista.add(opcao);
 
         return lista;
     }
 
-    public void decisoesMercador() {
+    public void respostasMercador(Maxwell max) {
         List<Integer> listaRespostas = perguntasMercador();
 
         Integer elemento = listaRespostas.get(0);
-        Integer distancia = listaRespostas.get(1);
-        Integer escolha = listaRespostas.get(3);
+        Integer poder = listaRespostas.get(1);
+        Integer opcao = listaRespostas.get(2);
 
         if(elemento < 5) {
-            if(distancia < 3) {
-                if(escolha == 1) {
-
+            if(poder < 3) {
+                if(opcao == 1) {
+                    max.setMoedas(max.getMoedas() - 1);
+                    max.setLimitador(max.getLimitador() + 1);
+                } else {
+                    max.setMoedas(max.getMoedas() - 1);
+                }
+            } else {
+                if (opcao == 1) {
+                    max.setMoedas(max.getMoedas() - 1);
+                    max.setLimitador(max.getLimitador() + 2);
+                } else {
+                    max.setMoedas(max.getMoedas() + 2 );
+                }
+            }
+        } else {
+            if(poder < 3) {
+                if(opcao == 1) {
+                    max.setMoedas(max.getMoedas() - 3);
+                    max.setLimitador(max.getLimitador() + 2);
+                } else {
+                    max.setMoedas(max.getMoedas() - 2);
+                }
+            } else {
+                if (opcao == 1) {
+                    max.setMoedas(max.getMoedas() - 1);
+                    max.setLimitador(max.getLimitador() + 3);
+                } else {
+                    max.setMoedas(max.getMoedas() - 3);
                 }
             }
         }

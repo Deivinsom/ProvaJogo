@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Viagem {
     Scanner sc = new Scanner(System.in);
+    Menu me = new Menu();
+
     //Mostrar os destinos possíveis
     public Vertice mostrarDestinos(int peso, MapaGrafo mapa) {
 
@@ -18,7 +20,6 @@ public class Viagem {
             escolhas.add(i + 1);
         }
         System.out.println("\n 9. Voltar.");
-        Menu me = new Menu();
         me.criarLinhas();
 
         int id = sc.nextInt();
@@ -44,5 +45,6 @@ public class Viagem {
     public void fazerViagem(Maxwell max, Vertice destino) {
         max.setCidadeAtual(destino.getCidade().getId());
         max.setMoedas(max.getMoedas()-1);
+        me.verificarMoedas();
     }
 }
