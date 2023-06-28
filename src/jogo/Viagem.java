@@ -3,7 +3,7 @@ package src.jogo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Viagem extends Menu{
+public class Viagem {
     Scanner sc = new Scanner(System.in);
 
     //Mostrar os destinos possíveis
@@ -20,7 +20,7 @@ public class Viagem extends Menu{
             escolhas.add(i + 1);
         }
         System.out.println("\n 9. Voltar.");
-        criarLinhas();
+        MenuUtil.criarLinhas();
 
         int id = sc.nextInt();
         while (verificador == false) {
@@ -45,9 +45,9 @@ public class Viagem extends Menu{
     public void fazerViagem(Maxwell max, Vertice destino, Joia joia) {
         max.setCidadeAtual(destino.getCidade().getId());
         max.setMoedas(max.getMoedas()-1);
-        verificarMoedas();
+        MenuUtil.verificarMoedas(max);
 
         joia.alterarJoia(joia, destino.getCidade().getQntPoder());
-        verificarJoia();
+        MenuUtil.verificarJoia(max, joia);
     }
 }
