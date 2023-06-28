@@ -3,9 +3,8 @@ package src.jogo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Viagem {
+public class Viagem extends Menu{
     Scanner sc = new Scanner(System.in);
-    Menu me = new Menu();
 
     //Mostrar os destinos possíveis
     public Vertice mostrarDestinos(int peso, MapaGrafo mapa) {
@@ -21,12 +20,12 @@ public class Viagem {
             escolhas.add(i + 1);
         }
         System.out.println("\n 9. Voltar.");
-        me.criarLinhas();
+        criarLinhas();
 
         int id = sc.nextInt();
         while (verificador == false) {
             if (id == 9) {
-                me.menuPrincipal();
+                return MapaGrafo.grafo.imprimirVertice(peso);
             } else if (escolhas.contains(id)) {
                 verificador = true;
             } else {
@@ -46,9 +45,9 @@ public class Viagem {
     public void fazerViagem(Maxwell max, Vertice destino, Joia joia) {
         max.setCidadeAtual(destino.getCidade().getId());
         max.setMoedas(max.getMoedas()-1);
-        me.verificarMoedas();
+        verificarMoedas();
 
         joia.alterarJoia(joia, destino.getCidade().getQntPoder());
-        me.verificarJoia();
+        verificarJoia();
     }
 }
