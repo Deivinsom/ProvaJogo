@@ -1,7 +1,6 @@
 package src.jogo;
 
 public class ConstruirCidades {
-
     // Construindo as cidades do mapa
 
     public static Vertice ubud() {
@@ -54,7 +53,7 @@ public class ConstruirCidades {
 
     public static Vertice defalsia() {
         Missao missao = new Missao("Botas do poder",
-                "Vá até a cidade de Principality of Kasya e receba as botas do poder",
+                "   'Vá até a cidade de Principality of\n  Kasya e receba as botas do poder.'",
                 6, 3, 1);
         Cidade defalsia = new Cidade("Defalsia", missao, -3, 8);
         Vertice novo = new Vertice(defalsia);
@@ -63,7 +62,7 @@ public class ConstruirCidades {
 
     public static Vertice kingdomOfKalb() {
         Missao missao = new Missao("Luvas do poder",
-                "Vá até a cidade de Grand Duchy of Smalia e receba as luvas do poder",
+                "   'Vá até a cidade de Grand Duchy of \n  Smalia e receba as luvas do poder.'",
                 4, 2, 2);
         Cidade kindomofKalb = new Cidade("Kingdom Of Kalb", missao, 2, 9);
         Vertice novo = new Vertice(kindomofKalb);
@@ -78,7 +77,7 @@ public class ConstruirCidades {
 
     public static Vertice vuneseEmpire() {
         Missao missao = new Missao("Glória dos Retornados",
-                "Vá até Ubud e recebe a Glória dos Retornados", 
+                "   'Vá até Ubud e recebe a Glória dos\n         Retornados.'", 
                 1, 10, -4);
         Cidade vuneseEmpire = new Cidade("Vunese Empire", missao, 0, 11);
         Vertice novo = new Vertice(vuneseEmpire);

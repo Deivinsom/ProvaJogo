@@ -30,10 +30,38 @@ public class Grafo {
         arestas.add(aresta);
     }
 
-    public void imprimirVertices() {
-        for (Vertice vertice : vertices) {
-            System.out.println(vertice.getCidade().getNome());
+    public String imprimirNome(int id) {
+        String nome = "";
+        for(int i = 0; i < vertices.size(); i++) {
+            if (vertices.get(i).getCidade().getId() == id) {
+                nome = vertices.get(i).getCidade().getNome();
+            }
         }
+
+        return nome;
+    }
+    
+    public Vertice imprimirVertice(int id) {
+        Vertice vertice = new Vertice();
+            for (int i = 0; i < vertices.size(); i++) {
+                if (vertices.get(i).getCidade().getId() == id) {
+                    vertice = vertices.get(i);
+                }
+            }
+        return vertice;
+    }
+
+    public boolean verificarMissao(int id) {
+        for(int i = 0; i < vertices.size(); i++) {
+            if (vertices.get(i).getCidade().getId() == id) {
+                if(vertices.get(id).getCidade().getMissao() == null){
+                    return false;
+                }
+                break;    
+            }
+        }
+
+        return true;
     }
 
     public ArrayList<Vertice> imprimirDestinos(int peso) {
@@ -45,5 +73,4 @@ public class Grafo {
         }
         return cidadesVizinhas;
     }
-
 }
