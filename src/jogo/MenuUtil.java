@@ -1,6 +1,9 @@
 package src.jogo;
 
+import java.util.Scanner;
+
 public class MenuUtil extends Menu{
+    static Scanner scanner = new Scanner(System.in);
 
     public static void limparConsole() { // Limpa o console ¯\_(ツ)_/¯
         final String sistemaOperacional = System.getProperty("os.name");
@@ -67,7 +70,7 @@ public class MenuUtil extends Menu{
     public static void verificarNargumun(Vertice cidadeAtual, Maxwell max) { // Verifica se Maxwell chegou a Nargumun
         if (cidadeAtual.getCidade().getNome() == "Nargumun") { // Finaliza o jogo ao chegar em Nargumun.
             criarLinhas();
-            System.out.println("                 NARGUMUN");
+            System.out.println("              ~ NARGUMUN ~");
             criarLinhas();
             System.out.println("\n      * Maxwell chegou em Nargumun *\n");
             System.err.println("    ~ Você tem " + max.getMoedas() + " Moedas de Transporte ~\n");
@@ -85,26 +88,68 @@ public class MenuUtil extends Menu{
         }
     }
 
-    public static void concluirMissao(boolean temMissao, Vertice missaoAtual, Vertice cidadeAtual, Maxwell max) { // Verifica se Maxwell chegou na cidade da missão
+    // Verifica se Maxwell chegou na cidade da missão
+    public static Object[] concluirMissao(boolean temMissao, Vertice missaoAtual, Vertice cidadeAtual, Maxwell max) { 
         if (temMissao) {
             if (missaoAtual.getCidade().getMissao().getTitulo() == "Botas do poder") {
                 if (missaoAtual.getCidade().getMissao().getCidadeConclusao() == cidadeAtual.getCidade().getId()) {
                     criarLinhas();
-                    System.out.println("                  Missão");
+                    System.out.println("        ~ Você concluiu uma missão ~");
                     criarLinhas();
-                    System.out.println("\n        ~ Você concluiu a missão ~\n");
-                    System.out.println("");
+                    System.out.println("\n" + missaoAtual.getCidade().getMissao().getText() + "\n");
+                    System.out.println( "-> Recompensas por completar:\n   - " + missaoAtual.getCidade().getMissao().getRecomCompletar() + 
+                            " Moedas de Transporte\n   - " + missaoAtual.getCidade().getMissao().getAlterarJoia() + " Limiar de jóia");
+
+                    System.out.println("\n Pressione <ENTER> para continuar...");
+                    scanner.nextLine();
+                    
                     max.setMoedas(max.getMoedas()+missaoAtual.getCidade().getMissao().getRecomCompletar());
                     max.setLimitador(max.getLimitador()+missaoAtual.getCidade().getMissao().getAlterarJoia());
                     missaoAtual = null;
+                    temMissao = false;
 
-
+                    return new Object[] {temMissao, missaoAtual};
                 }
             } else if (missaoAtual.getCidade().getMissao().getTitulo() == "Luvas do poder") {
+                if (missaoAtual.getCidade().getMissao().getCidadeConclusao() == cidadeAtual.getCidade().getId()) {
+                    criarLinhas();
+                    System.out.println("        ~ Você concluiu uma missão ~");
+                    criarLinhas();
+                    System.out.println("\n" + missaoAtual.getCidade().getMissao().getText() + "\n");
+                    System.out.println( "-> Recompensas por completar:\n   - " + missaoAtual.getCidade().getMissao().getRecomCompletar() + 
+                            " Moedas de Transporte\n   - " + missaoAtual.getCidade().getMissao().getAlterarJoia() + " Limiar de jóia");
 
+                    System.out.println("\n Pressione <ENTER> para continuar...");
+                    scanner.nextLine();
+                    
+                    max.setMoedas(max.getMoedas()+missaoAtual.getCidade().getMissao().getRecomCompletar());
+                    max.setLimitador(max.getLimitador()+missaoAtual.getCidade().getMissao().getAlterarJoia());
+                    missaoAtual = null;
+                    temMissao = false;
+
+                    return new Object[] {temMissao, missaoAtual};
+                }
             } else if (missaoAtual.getCidade().getMissao().getTitulo() == "Glória dos Retornados") {
+                 if (missaoAtual.getCidade().getMissao().getCidadeConclusao() == cidadeAtual.getCidade().getId()) {
+                    criarLinhas();
+                    System.out.println("        ~ Você concluiu uma missão ~");
+                    criarLinhas();
+                    System.out.println("\n" + missaoAtual.getCidade().getMissao().getText() + "\n");
+                    System.out.println( "-> Recompensas por completar:\n   - " + missaoAtual.getCidade().getMissao().getRecomCompletar() + 
+                            " Moedas de Transporte\n   - " + missaoAtual.getCidade().getMissao().getAlterarJoia() + " Limiar de jóia");
 
+                    System.out.println("\n Pressione <ENTER> para continuar...");
+                    scanner.nextLine();
+                    
+                    max.setMoedas(max.getMoedas()+missaoAtual.getCidade().getMissao().getRecomCompletar());
+                    max.setLimitador(max.getLimitador()+missaoAtual.getCidade().getMissao().getAlterarJoia());
+                    missaoAtual = null;
+                    temMissao = false;
+
+                    return new Object[] {temMissao, missaoAtual};
+                 }
             }
         }
+        return null;
     }
 }
