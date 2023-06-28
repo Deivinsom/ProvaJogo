@@ -85,7 +85,7 @@ public class MenuUtil extends Menu{
         }
     }
 
-    public static void concluirMissao(boolean temMissao, Vertice missaoAtual, Vertice cidadeAtual) { // Verifica se Maxwell chegou na cidade da missão
+    public static void concluirMissao(boolean temMissao, Vertice missaoAtual, Vertice cidadeAtual, Maxwell max) { // Verifica se Maxwell chegou na cidade da missão
         if (temMissao) {
             if (missaoAtual.getCidade().getMissao().getTitulo() == "Botas do poder") {
                 if (missaoAtual.getCidade().getMissao().getCidadeConclusao() == cidadeAtual.getCidade().getId()) {
@@ -94,6 +94,9 @@ public class MenuUtil extends Menu{
                     criarLinhas();
                     System.out.println("\n        ~ Você concluiu a missão ~\n");
                     System.out.println("");
+                    max.setMoedas(max.getMoedas()+missaoAtual.getCidade().getMissao().getRecomCompletar());
+                    max.setLimitador(max.getLimitador()+missaoAtual.getCidade().getMissao().getAlterarJoia());
+                    missaoAtual = null;
 
 
                 }

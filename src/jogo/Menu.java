@@ -117,7 +117,7 @@ public class Menu {
         
         mercador.respostasMercador(main.max);
 
-        MenuUtil.concluirMissao(temMissao, missaoAtual, cidadeAtual);
+        MenuUtil.concluirMissao(temMissao, missaoAtual, cidadeAtual, main.max);
 
         MenuUtil.verificarMoedas(main.max);
 
