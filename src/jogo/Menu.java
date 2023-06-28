@@ -133,7 +133,7 @@ public class Menu {
         MenuUtil.criarLinhas();
         destino = viagem.mostrarDestinos(main.max.getCidadeAtual(), mapa);
 
-        if (destino != cidadeAtual) {
+        if (destino.getCidade().getId() != cidadeAtual.getCidade().getId()) {
             viagem.fazerViagem(main.max, destino, main.joia);
         } else {
             menuPrincipal();
