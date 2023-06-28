@@ -7,7 +7,7 @@ public class Viagem {
     Scanner sc = new Scanner(System.in);
 
     //Mostrar os destinos possíveis
-    public Vertice mostrarDestinos(int peso, MapaGrafo mapa) {
+    public Vertice mostrarDestinos(int peso, MapaGrafo mapa, Main main) {
 
         boolean verificador = false;
 
@@ -20,6 +20,9 @@ public class Viagem {
             escolhas.add(i + 1);
         }
         System.out.println("\n 9. Voltar.");
+        MenuUtil.criarLinhas();
+                System.out.println(" Moedas: " + main.max.getMoedas() + " Poder da Joia: " + main.joia.getPoderJoia() + 
+                " | Limiar: " + main.max.getLimitador());
         MenuUtil.criarLinhas();
 
         int id = sc.nextInt();

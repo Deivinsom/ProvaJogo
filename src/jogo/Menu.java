@@ -137,7 +137,7 @@ public class Menu {
         MenuUtil.criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         MenuUtil.criarLinhas();
-        destino = viagem.mostrarDestinos(main.max.getCidadeAtual(), mapa);
+        destino = viagem.mostrarDestinos(main.max.getCidadeAtual(), mapa, main);
 
         if (destino.getCidade().getId() != cidadeAtual.getCidade().getId()) {
             viagem.fazerViagem(main.max, destino, main.joia);
