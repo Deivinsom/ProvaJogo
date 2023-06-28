@@ -16,7 +16,8 @@ public class Viagem {
         ArrayList<Vertice> destinos = MapaGrafo.grafo.imprimirDestinos(peso);
 
         for (int i = 0; i < destinos.size(); i++) {
-            System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome());
+            System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome() + " | " + 
+                    destinos.get(i).getCidade().getAlterarJoia() + " Poder de Joia");
             escolhas.add(i + 1);
         }
         System.out.println("\n 9. Voltar.");
@@ -46,5 +47,8 @@ public class Viagem {
         max.setCidadeAtual(destino.getCidade().getId());
         max.setMoedas(max.getMoedas()-1);
         me.verificarMoedas();
+
+        me.main.joia.alterarJoia(MapaGrafo.grafo.imprimirVertice(max.getCidadeAtual()).getCidade().getAlterarJoia());
+        me.verificarJoia();
     }
 }

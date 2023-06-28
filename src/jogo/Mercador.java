@@ -43,33 +43,90 @@ public class Mercador {
         if(elemento < 5) {
             if(poder < 3) {
                 if(opcao == 1) {
-                    max.setMoedas(max.getMoedas() - 1);
-                    max.setLimitador(max.getLimitador() + 1);
+                    try {
+                        max.setMoedas(max.getMoedas() - 1);
+                        max.setLimitador(max.getLimitador() + 1);
+                        
+                        System.out.println(" * O mercador pega 1 de suas moedas e aumenta 1 do seu limiar de joia *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    }
                 } else {
-                    max.setMoedas(max.getMoedas() - 1);
+                    try {
+                        max.setMoedas(max.getMoedas() - 1);
+
+                        System.out.println(" * O mercador pega 1 de suas moedas *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    }     
                 }
             } else {
                 if (opcao == 1) {
-                    max.setMoedas(max.getMoedas() - 1);
-                    max.setLimitador(max.getLimitador() + 2);
+                    try {
+                        max.setMoedas(max.getMoedas() - 1);
+                        max.setLimitador(max.getLimitador() + 2);
+
+                        System.out.println(" * O mercador pega 1 de suas moedas e aumenta 2 do seu limiar de joia *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    }
                 } else {
-                    max.setMoedas(max.getMoedas() + 2 );
+                    try {
+                        max.setMoedas(max.getMoedas() + 2 );
+
+                        System.out.println(" * O mercador lhe dá 2 moedas *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    } 
+                    
                 }
             }
         } else {
             if(poder < 3) {
                 if(opcao == 1) {
-                    max.setMoedas(max.getMoedas() - 3);
-                    max.setLimitador(max.getLimitador() + 2);
+                    try {
+                        max.setMoedas(max.getMoedas() - 3);
+                        max.setLimitador(max.getLimitador() + 2);
+
+                        System.out.println(" * O mercador pega 3 de suas moedas e aumenta 2 do seu limiar de joia *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    }
                 } else {
-                    max.setMoedas(max.getMoedas() - 2);
+                    try {
+                        max.setMoedas(max.getMoedas() - 2);
+
+                        System.out.println(" * O mercador pega 2 de suas moedas *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    } 
                 }
             } else {
                 if (opcao == 1) {
-                    max.setMoedas(max.getMoedas() - 1);
-                    max.setLimitador(max.getLimitador() + 3);
+                    try {
+                        max.setMoedas(max.getMoedas() - 1);
+                        max.setLimitador(max.getLimitador() + 3);
+
+                        System.out.println(" * O mercador pega 1 de suas moedas e aumenta 3 do seu limiar de joia *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    }
                 } else {
-                    max.setMoedas(max.getMoedas() - 3);
+                    try {
+                        max.setMoedas(max.getMoedas() - 3);
+
+                        System.out.println(" * O mercador pega 3 de suas moedas *");
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+            
+                    } 
                 }
             }
         }
