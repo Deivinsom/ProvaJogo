@@ -3,7 +3,7 @@ package src.jogo;
 import java.util.Scanner;
 
 public class Menu {
-    static Main main = new Main();
+    Main main = new Main();
     private Mercador mercador = new Mercador();
     static Viagem viagem = new Viagem();
     private Vertice missaoAtual = new Vertice();
@@ -13,6 +13,8 @@ public class Menu {
     Scanner scanner = new Scanner(System.in);
 
     public void dialogoInicial() { // apenas para entretenimento.
+        limparConsole();
+
         try {
             System.out.println("\n      DEATH STRANDING 3" + "\n------------------------------");
             System.out.println("Pressione <ENTER> para começar...");
@@ -106,7 +108,7 @@ public class Menu {
         }       
     }
 
-    public void trocaCidade() { // Menu Principal do jogo, aparece após as perguntas do mercador.
+    public void trocaCidade() { // Chamado quando o Maxwell troca de cidade
         limparConsole();
         
         mercador.respostasMercador(main.max);
@@ -116,10 +118,10 @@ public class Menu {
         menuPrincipal();
     }
 
-    public void menuViagem(){
+    public void menuViagem(){ // Menu de escolhas para viagem
         MapaGrafo mapa = new MapaGrafo();
         Vertice destino = new Vertice();
-
+        
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
@@ -132,7 +134,7 @@ public class Menu {
         trocaCidade();
     }
 
-    public void menuMissao() {
+    public void menuMissao() { // Menu de escolhas para missão
         Vertice cidadeAtual = new Vertice();
         cidadeAtual = MapaGrafo.grafo.imprimirVertice(main.max.getCidadeAtual());
 
@@ -153,7 +155,7 @@ public class Menu {
             opcaoEscolhida = scanner.nextInt();
             while (opcaoEscolhida < 1 || opcaoEscolhida > 2 && opcaoEscolhida != 9) {
                 System.out.println("Escolha um opção válida.");
-                escolha = scanner.nextInt();
+                opcaoEscolhida = scanner.nextInt();
             }
 
             if (opcaoEscolhida == 1) {
@@ -199,6 +201,8 @@ public class Menu {
                 try {
                     temMissao = true;
                     missaoAtual = cidadeAtual;
+                    main.max.setMoedas(main.max.getMoedas() + missaoAtual.getCidade().getMissao().getRecomAceitar());
+
                     System.out.println("\n ~ Missão Aceita! ~");
                     Thread.sleep(2000);
                     menuPrincipal();
@@ -252,15 +256,45 @@ public class Menu {
         System.out.println("+--------------------------------------------+");
     }
 
-    public void verificarMoedas() {
+    public void verificarMoedas() { // Verifica a quantidade de moedas do Maxwell
         if (main.max.getMoedas() <= -1) { 
             try {
                 limparConsole();
-                System.out.println("~ Max ficou sem moedas! O jogo acabou. ~");
-                Thread.sleep(2300);
+                System.out.println("  ~ Max ficou sem moedas e acabou sendo vendido como um escravo por suas dívidas! ~\n\n" + 
+                        "                           ~ O jogo acabou. ~");
+                Thread.sleep(6000);
                 System.exit(0);
             } catch (Exception e) {
 
+            }
+        }
+    }
+
+    public void verificarJoia() {
+        if (main.joia.getPoderJoia() < 0 || main.joia.getPoderJoia() > main.max.getLimitador()) { 
+            if (main.joia.getPoderJoia() < 0) {
+                try {
+                    limparConsole();
+                    System.out.println("  ~ O poder da jóia diminuiu ao ponto de ficar negativo, ela começa a acumular energia\n" + 
+                            "  negra profana e absorve Maxwell para um mundo mágico cheio de sofrimento pela eternidade. ~\n\n" +
+                            "                               ~ O jogo acabou. ~");
+                    Thread.sleep(10000);
+                    System.exit(0);
+                } catch (Exception e) {
+
+                }
+            } else {
+                try {
+                    limparConsole();
+                    System.out.println("  ~ O poder da jóia aumentou ao ponto de Maxwell não conseguir controlá-la. Com a joia\n" + 
+                            "  instável, ele resolve que a melhor decisão é jogá-la para longe e tentar salvar a si mesmo.\n" +
+                            "  Ao cair, ela explode levando toda a região... e Maxwell também. ~\n\n" +
+                            "                               ~ O jogo acabou. ~");
+                    Thread.sleep(13000);
+                    System.exit(0);
+                } catch (Exception e) {
+
+                }
             }
         }
     }

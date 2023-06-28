@@ -8,7 +8,7 @@ public class Main {
         MapaGrafo.addCidades();
         Menu me = new Menu();
 
-        me.dialogoInicial();
+        me.menuPrincipal();
     }
 
 }
