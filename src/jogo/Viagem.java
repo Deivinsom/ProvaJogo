@@ -17,7 +17,7 @@ public class Viagem {
 
         for (int i = 0; i < destinos.size(); i++) {
             System.out.println(" " + (i + 1) + ". " + destinos.get(i).getCidade().getNome() + " | " + 
-                    destinos.get(i).getCidade().getAlterarJoia() + " Poder de Joia");
+                    destinos.get(i).getCidade().getQntPoder() + " Poder de Joia");
             escolhas.add(i + 1);
         }
         System.out.println("\n 9. Voltar.");
@@ -43,12 +43,12 @@ public class Viagem {
     }
 
     //Fazer viagem para a cidade escolhida.
-    public void fazerViagem(Maxwell max, Vertice destino) {
+    public void fazerViagem(Maxwell max, Vertice destino, Joia joia) {
         max.setCidadeAtual(destino.getCidade().getId());
         max.setMoedas(max.getMoedas()-1);
         me.verificarMoedas();
 
-        me.main.joia.alterarJoia(MapaGrafo.grafo.imprimirVertice(max.getCidadeAtual()).getCidade().getAlterarJoia());
+        joia.alterarJoia(joia, destino.getCidade().getQntPoder());
         me.verificarJoia();
     }
 }

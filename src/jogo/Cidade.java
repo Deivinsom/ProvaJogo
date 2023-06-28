@@ -3,17 +3,17 @@ package src.jogo;
 public class Cidade {
     private String nome;
     private Missao missao;
-    private int alterarJoia;
+    private int qntPoder;
     private int id;
 
     public Cidade() {
         
     }
 
-    public Cidade(String nome, Missao missao, int alterarJoia, int id) {
+    public Cidade(String nome, Missao missao, int qntPoder, int id) {
         this.missao = missao;
         this.nome = nome;
-        this.alterarJoia = alterarJoia;
+        this.qntPoder = qntPoder;
         this.id = id;
     }
 
@@ -33,12 +33,12 @@ public class Cidade {
         this.missao = missao;
     }
 
-    public int getAlterarJoia() {
-        return alterarJoia;
+    public int getQntPoder() {
+        return qntPoder;
     }
 
-    public void setAlterarJoia(int alterarJoia) {
-        this.alterarJoia = alterarJoia;
+    public void setQntPoder(int qntPoder) {
+        this.qntPoder = qntPoder;
     }
 
     public int getId() {

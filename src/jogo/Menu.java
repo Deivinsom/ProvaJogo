@@ -58,6 +58,8 @@ public class Menu {
     }
 
     public void menuPrincipal() { // Menu Principal do jogo, aparece após as perguntas do mercador.
+        Vertice cidadeAtual = MapaGrafo.grafo.imprimirVertice(main.max.getCidadeAtual());
+
         limparConsole();
 
         if (MapaGrafo.grafo.verificarMissao(main.max.getCidadeAtual())) {
@@ -125,12 +127,14 @@ public class Menu {
         criarLinhas();
         System.out.println("        1. Viajar para a próxima cidade.");
         criarLinhas();
-        destino = viagem.mostrarDestinos(main.max.getCidadeAtual(),mapa);
+        destino = viagem.mostrarDestinos(main.max.getCidadeAtual(), mapa);
 
-        viagem.fazerViagem(main.max, destino);
+        viagem.fazerViagem(main.max, destino, main.joia);
         
         // Maxwell so morre quando ele não tem mais dinheiro para fazer a viagem e ainda sim tenta faze-la.
         verificarMoedas();
+        verificarJoia();
+
         trocaCidade();
     }
 
