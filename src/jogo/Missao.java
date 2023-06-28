@@ -6,17 +6,19 @@ public class Missao {
     private int recomAceitar;
     private int recomCompletar;
     private int alterarJoia;
+    private int cidadeConclusao;
 
     public Missao() {
         
     }
 
-    public Missao(String titulo, String text, int recomAceitar, int recomCompletar, int alterarJoia) {
+    public Missao(String titulo, String text, int recomAceitar, int recomCompletar, int alterarJoia, int cidadeConclusao) {
         this.text = text;
         this.titulo = titulo;
         this.recomAceitar = recomAceitar;
         this.recomCompletar = recomCompletar;
         this.alterarJoia = alterarJoia;
+        this.cidadeConclusao = cidadeConclusao;
     }
 
     public String getTitulo() {
@@ -57,6 +59,14 @@ public class Missao {
 
     public void setAlterarJoia(int alterarJoia) {
         this.alterarJoia = alterarJoia;
+    }
+
+    public int getCidadeConclusao() {
+        return cidadeConclusao;
+    }
+
+    public void setCidadeConclusao(int cidadeConclusao) {
+        this.cidadeConclusao = cidadeConclusao;
     }
 
 }
